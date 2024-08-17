@@ -2,8 +2,16 @@ let currentLine = 0;
 let codeLines = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicialmente, carrega a biblioteca HTML
-    loadLibrary('data/taskTime_data/html_lines.json');
+    // Obter o parâmetro da URL para determinar qual projeto está sendo acessado
+    const urlParams = new URLSearchParams(window.location.search);
+    const library = urlParams.get('library');
+
+    // Inicialmente, carrega a biblioteca HTML do projeto correspondente
+    if (library) {
+        loadLibrary(`data/${library}/html_lines.json`);
+    } else {
+        console.error('Nenhuma biblioteca foi selecionada.');
+    }
 
     // Botão "Voltar para o topo"
     document.getElementById('scroll-top').addEventListener('click', () => {
@@ -38,17 +46,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Adiciona eventos aos botões de linguagem
     document.getElementById('html-btn').addEventListener('click', () => {
         console.log('Carregando biblioteca HTML');
-        loadLibrary('data/taskTime_data/html_lines.json');
+        loadLibrary(`data/${library}/html_lines.json`);
     });
 
     document.getElementById('css-btn').addEventListener('click', () => {
         console.log('Carregando biblioteca CSS');
-        loadLibrary('data/taskTime_data/css_lines.json');
+        loadLibrary(`data/${library}/css_lines.json`);
     });
 
     document.getElementById('js-btn').addEventListener('click', () => {
         console.log('Carregando biblioteca JavaScript');
-        loadLibrary('data/taskTime_data/javascript_lines.json');
+        loadLibrary(`data/${library}/javascript_lines.json`);
     });
 });
 
