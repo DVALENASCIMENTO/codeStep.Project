@@ -1,610 +1,618 @@
 [
     {
+        "code": "@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');",
+        "explanation": "Importa a fonte 'Bebas Neue' do Google Fonts, que será usada em todo o documento para estilizar o texto."
+    },
+    {
         "code": "body {",
-        "explanation": "Inicia a regra CSS para o elemento <body>, que é o contêiner principal do conteúdo da página."
-    },
-    {
-        "code": "    font-family: Arial, sans-serif;",
-        "explanation": "Define a fonte do corpo da página como Arial, com uma fonte genérica de sans-serif como fallback. Isso garante que o texto seja legível e tenha um estilo moderno."
-    },
-    {
-        "code": "    background-color: #04021f;",
-        "explanation": "Define a cor de fundo da página como um tom escuro de azul. Isso cria um contraste com o texto e outros elementos, ajudando na legibilidade."
-    },
-    {
-        "code": "    color: #fff;",
-        "explanation": "Define a cor do texto como branca (#fff), garantindo que o conteúdo seja facilmente legível sobre o fundo escuro."
+        "explanation": "Inicia a estilização do elemento <body>, que representa o conteúdo principal da página."
     },
     {
         "code": "    margin: 0;",
-        "explanation": "Remove a margem padrão do <body>, evitando espaços indesejados ao redor do conteúdo da página."
-    },
-    {
-        "code": "    padding: 0;",
-        "explanation": "Remove o preenchimento padrão do <body>, garantindo que o conteúdo comece no topo da página."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a regra CSS para o elemento <body>."
-    },
-    {
-        "code": "header {",
-        "explanation": "Inicia a regra CSS para o elemento <header>, que contém o cabeçalho da página."
-    },
-    {
-        "code": "    text-align: center;",
-        "explanation": "Centraliza o texto dentro do cabeçalho, o que é útil para títulos e elementos de navegação."
-    },
-    {
-        "code": "    padding: 20px 0;",
-        "explanation": "Adiciona um preenchimento vertical (20 pixels) ao cabeçalho, criando espaço entre o conteúdo e as bordas superior e inferior."
-    },
-    {
-        "code": "    background: linear-gradient(to bottom, #1f12ca, #040f74, #070338, #040220);",
-        "explanation": "Define um fundo com um gradiente linear que vai do roxo ao azul escuro, criando um efeito visual atraente para o cabeçalho."
-    },
-    {
-        "code": "    color: white;",
-        "explanation": "Define a cor do texto no cabeçalho como branca, garantindo que ele se destaque sobre o fundo colorido."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a regra CSS para o elemento <header>."
-    },
-    {
-        "code": "h1 {",
-        "explanation": "Inicia a regra CSS para o elemento <h1>, que é o título principal da página."
-    },
-    {
-        "code": "    font-family: 'Poppins', sans-serif;",
-        "explanation": "Define a fonte do título como 'Poppins', com uma fonte genérica de sans-serif como fallback, proporcionando um estilo moderno e elegante."
-    },
-    {
-        "code": "    font-size: 48px;",
-        "explanation": "Define o tamanho da fonte do título principal como 48 pixels, tornando-o visualmente proeminente na página."
-    },
-    {
-        "code": "    background: linear-gradient(to bottom, #a0dfe7 50%, #dba340 50%);",
-        "explanation": "Define um gradiente de fundo para o texto do título, que vai do azul claro ao dourado, criando um efeito de texto atrativo."
-    },
-    {
-        "code": "    -webkit-background-clip: text;",
-        "explanation": "Aplica o efeito de recorte de fundo no texto usando a propriedade do prefixo -webkit. Isso permite que o gradiente de fundo apareça apenas nas letras."
-    },
-    {
-        "code": "    background-clip: text;",
-        "explanation": "Aplica o efeito de recorte de fundo no texto, semelhante à linha anterior, mas sem prefixo, garantindo compatibilidade com outros navegadores."
-    },
-    {
-        "code": "    color: transparent;",
-        "explanation": "Define a cor do texto como transparente, permitindo que o gradiente de fundo seja visível apenas nas letras."
-    },
-    {
-        "code": "    margin: 0;",
-        "explanation": "Remove a margem padrão ao redor do título, ajudando a manter o layout limpo."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a regra CSS para o elemento <h1>."
-    },
-    {
-        "code": "main {",
-        "explanation": "Inicia a regra CSS para o elemento <main>, que contém o conteúdo principal da página."
-    },
-    {
-        "code": "    background: linear-gradient(to bottom, #010120, #020422);",
-        "explanation": "Define um gradiente de fundo escuro para o conteúdo principal, criando um efeito visual contínuo com o cabeçalho."
-    },
-    {
-        "code": "    padding: 20px;",
-        "explanation": "Adiciona um preenchimento de 20 pixels ao redor do conteúdo principal, proporcionando espaço interno e evitando que o conteúdo fique colado às bordas."
-    },
-    {
-        "code": "    color: white;",
-        "explanation": "Define a cor do texto no conteúdo principal como branca, garantindo que o texto seja legível sobre o fundo escuro."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a regra CSS para o elemento <main>."
-    },
-    {
-        "code": ".task-list {",
-        "explanation": "Inicia a regra CSS para elementos com a classe task-list, que representa a seção onde as tarefas são listadas."
-    },
-    {
-        "code": "    background-color: #010120;",
-        "explanation": "Define a cor de fundo da lista de tarefas como um tom escuro, mantendo a consistência com o restante da página."
-    },
-    {
-        "code": "    padding: 20px;",
-        "explanation": "Adiciona um preenchimento de 20 pixels à lista de tarefas, criando espaço interno e evitando que o conteúdo fique colado às bordas."
-    },
-    {
-        "code": "    border-radius: 10px;",
-        "explanation": "Adiciona cantos arredondados de 10 pixels à lista de tarefas, suavizando a aparência visual e melhorando o design."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a regra CSS para a classe .task-list."
-    },
-    {
-        "code": "h2 {",
-        "explanation": "Inicia a regra CSS para o elemento <h2>, que é usado para subtítulos na página."
-    },
-    {
-        "code": "    margin-top: 0;",
-        "explanation": "Remove a margem superior do subtítulo, ajudando a manter o layout limpo e organizado."
-    },
-    {
-        "code": "    text-align: center;",
-        "explanation": "Centraliza o texto do subtítulo, proporcionando uma apresentação mais equilibrada."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a regra CSS para o elemento <h2>."
-    },
-    {
-        "code": ".task-list ul {",
-        "explanation": "Inicia a regra CSS para listas não ordenadas dentro da classe task-list."
-    },
-    {
-        "code": "    list-style-type: none;",
-        "explanation": "Remove os marcadores padrão da lista, proporcionando um visual mais limpo e organizado."
-    },
-    {
-        "code": "    padding: 0;",
-        "explanation": "Remove o preenchimento padrão da lista, ajudando a alinhar o conteúdo adequadamente."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a regra CSS para listas dentro da classe task-list."
-    },
-    {
-        "code": ".task-list li {",
-        "explanation": "Inicia a regra CSS para itens de lista dentro da classe task-list."
-    },
-    {
-        "code": "    margin-bottom: 10px;",
-        "explanation": "Adiciona uma margem inferior de 10 pixels a cada item da lista, criando espaço entre os itens e melhorando a legibilidade."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a regra CSS para itens de lista dentro da classe task-list."
-    },
-    {
-        "code": "#task-input {",
-        "explanation": "Inicia a regra CSS para o campo de entrada de texto com o ID task-input, onde os usuários podem adicionar novas tarefas."
-    },
-    {
-        "code": "    width: 300px;",
-        "explanation": "Define a largura do campo de entrada como 300 pixels, garantindo que ele tenha um tamanho adequado para a entrada de texto."
-    },
-    {
-        "code": "    padding: 10px;",
-        "explanation": "Adiciona um preenchimento de 10 pixels ao campo de entrada, proporcionando espaço interno e melhorando a usabilidade."
-    },
-    {
-        "code": "    font-size: 16px;",
-        "explanation": "Define o tamanho da fonte do texto dentro do campo de entrada como 16 pixels, facilitando a leitura e a digitação."
-    },
-    {
-        "code": "    border: 1px solid #ccc;",
-        "explanation": "Adiciona uma borda de 1 pixel de espessura ao redor do campo de entrada, com uma cor cinza clara (#ccc), definindo visualmente o campo."
-    },
-    {
-        "code": "    border-radius: 5px;",
-        "explanation": "Adiciona cantos arredondados de 5 pixels ao campo de entrada, suavizando a aparência visual."
-    },
-    {
-        "code": "    margin-bottom: 10px;",
-        "explanation": "Adiciona uma margem inferior de 10 pixels ao campo de entrada, criando espaço entre ele e o próximo elemento."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a regra CSS para o campo de entrada com o ID task-input."
-    },
-    {
-        "code": "#add-task-btn {",
-        "explanation": "Inicia a regra CSS para o botão de adicionar tarefa com o ID add-task-btn."
-    },
-    {
-        "code": "    padding: 10px 20px;",
-        "explanation": "Adiciona um preenchimento de 10 pixels na parte superior e inferior e 20 pixels nas laterais do botão, tornando-o mais clicável."
-    },
-    {
-        "code": "    font-size: 16px;",
-        "explanation": "Define o tamanho da fonte do texto no botão como 16 pixels, garantindo que seja legível."
-    },
-    {
-        "code": "    background-color: #4CAF50;",
-        "explanation": "Define a cor de fundo do botão como verde (#4CAF50), que é uma cor comum para ações positivas."
-    },
-    {
-        "code": "    color: white;",
-        "explanation": "Define a cor do texto no botão como branca, proporcionando bom contraste com o fundo verde."
-    },
-    {
-        "code": "    border: none;",
-        "explanation": "Remove a borda padrão do botão, proporcionando uma aparência mais limpa."
-    },
-    {
-        "code": "    border-radius: 5px;",
-        "explanation": "Adiciona cantos arredondados de 5 pixels ao botão, melhorando sua estética."
-    },
-    {
-        "code": "    cursor: pointer;",
-        "explanation": "Altera o cursor para um ponteiro quando o mouse passa sobre o botão, indicando que ele é clicável."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a regra CSS para o botão de adicionar tarefa."
-    },
-    {
-        "code": "#add-task-btn:hover {",
-        "explanation": "Inicia a regra CSS para o estado de foco do botão de adicionar tarefa, que é aplicado quando o mouse passa sobre ele."
-    },
-    {
-        "code": "    background-color: #45a049;",
-        "explanation": "Muda a cor de fundo do botão para um verde mais escuro quando o mouse está sobre ele, indicando que ele está ativo."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a regra CSS para o estado de foco do botão de adicionar tarefa."
-    },
-    {
-        "code": ".pomodoro-timer {",
-        "explanation": "Inicia a regra CSS para a classe pomodoro-timer, que representa a seção do temporizador Pomodoro."
-    },
-    {
-        "code": "    background-color: #010120;",
-        "explanation": "Define a cor de fundo do temporizador Pomodoro como um tom escuro, mantendo a consistência com o restante da página."
-    },
-    {
-        "code": "    padding: 20px;",
-        "explanation": "Adiciona um preenchimento de 20 pixels ao redor do temporizador, criando espaço interno e evitando que o conteúdo fique colado às bordas."
-    },
-    {
-        "code": "    border-radius: 10px;",
-        "explanation": "Adiciona cantos arredondados de 10 pixels ao temporizador Pomodoro, melhorando sua aparência visual."
-    },
-    {
-        "code": "    position: relative;",
-        "explanation": "Define a posição do temporizador como relativa, permitindo que os elementos filhos sejam posicionados em relação a ele."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a regra CSS para a classe .pomodoro-timer."
-    },
-    {
-        "code": ".timer-container {",
-        "explanation": "Inicia a regra CSS para a classe timer-container, que contém o círculo do temporizador."
-    },
-    {
-        "code": "    position: relative;",
-        "explanation": "Define a posição do contêiner do temporizador como relativa, permitindo que os elementos filhos sejam posicionados em relação a ele."
-    },
-    {
-        "code": "    width: 200px;",
-        "explanation": "Define a largura do contêiner do temporizador como 200 pixels, proporcionando um tamanho apropriado para o círculo."
-    },
-    {
-        "code": "    height: 200px;",
-        "explanation": "Define a altura do contêiner do temporizador como 200 pixels, criando um círculo perfeitamente proporcional."
-    },
-    {
-        "code": "    margin: 0 auto;",
-        "explanation": "Centraliza o contêiner do temporizador horizontalmente na página, garantindo que ele esteja posicionado no meio."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a regra CSS para a classe .timer-container."
-    },
-    {
-        "code": ".timer-circle {",
-        "explanation": "Inicia a regra CSS para a classe timer-circle, que representa o círculo visual do temporizador."
-    },
-    {
-        "code": "    position: absolute;",
-        "explanation": "Define a posição do círculo como absoluta, permitindo que ele seja posicionado em relação ao seu contêiner pai."
-    },
-    {
-        "code": "    top: 0;",
-        "explanation": "Define a posição superior do círculo como 0, alinhando-o ao topo do seu contêiner pai."
-    },
-    {
-        "code": "    left: 0;",
-        "explanation": "Define a posição esquerda do círculo como 0, alinhando-o à esquerda do seu contêiner pai."
+        "explanation": "Remove as margens padrão ao redor do corpo da página para garantir que o conteúdo ocupe toda a área disponível."
     },
     {
         "code": "    width: 100%;",
-        "explanation": "Define a largura do círculo como 100% do contêiner pai, garantindo que ele preencha todo o espaço disponível."
+        "explanation": "Define a largura do corpo da página como 100% da largura da janela de visualização, ocupando toda a largura disponível."
     },
     {
-        "code": "    height: 100%;",
-        "explanation": "Define a altura do círculo como 100% do contêiner pai, garantindo que ele seja um círculo perfeito."
-    },
-    {
-        "code": "    border: 5px solid #5ce1f8;",
-        "explanation": "Adiciona uma borda de 5 pixels ao círculo com a cor azul clara (#5ce1f8), criando um contorno visível."
-    },
-    {
-        "code": "    border-radius: 50%;",
-        "explanation": "Define a borda como arredondada em 50%, transformando o elemento em um círculo."
-    },
-    {
-        "code": "    box-sizing: border-box;",
-        "explanation": "Define o modelo de caixa para incluir o preenchimento e a borda no cálculo da largura e altura, evitando que o círculo fique maior do que o esperado."
-    },
-    {
-        "code": "    overflow: hidden;",
-        "explanation": "Oculta qualquer conteúdo que transborde o círculo, garantindo que o temporizador permaneça dentro de sua forma."
-    },
-    {
-        "code": "    animation: pulse 1s infinite alternate;",
-        "explanation": "Aplica uma animação chamada pulse ao círculo, que fará com que ele pulse continuamente, criando um efeito visual interessante."
-    },
-    {
-        "code": "    box-shadow: ",
-        "explanation": "Inicia a definição de uma sombra para o círculo, que pode adicionar profundidade ao elemento."
-    },
-    {
-        "code": "        0 0 20px 5px #fff,",
-        "explanation": "Define a primeira parte da sombra: uma sombra difusa branca com 20 pixels de desfoque e 5 pixels de extensão."
-    },
-    {
-        "code": "        0 0 0 0 transparent;",
-        "explanation": "Define a segunda parte da sombra: nenhuma sombra adicional, permitindo um efeito de destaque."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a regra CSS para a classe .timer-circle."
-    },
-    {
-        "code": "@keyframes pulse {",
-        "explanation": "Inicia a definição da animação chamada pulse, que descreve como o círculo deve se comportar durante a animação."
-    },
-    {
-        "code": "    from {",
-        "explanation": "Define o estado inicial da animação."
-    },
-    {
-        "code": "        box-shadow: ",
-        "explanation": "Inicia a definição da sombra para o estado inicial da animação."
-    },
-    {
-        "code": "            0 0 20px 5px #fff,",
-        "explanation": "Define uma sombra difusa branca com 20 pixels de desfoque e 5 pixels de extensão para o estado inicial."
-    },
-    {
-        "code": "            0 0 0 0 transparent; ",
-        "explanation": "Define que não há sombra adicional para o estado inicial."
-    },
-    {
-        "code": "    }",
-        "explanation": "Fecha a definição do estado inicial da animação."
-    },
-    {
-        "code": "    to {",
-        "explanation": "Define o estado final da animação."
-    },
-    {
-        "code": "        box-shadow: ",
-        "explanation": "Inicia a definição da sombra para o estado final da animação."
-    },
-    {
-        "code": "            0 0 10px 2px #fff,",
-        "explanation": "Define uma sombra difusa branca com 10 pixels de desfoque e 2 pixels de extensão para o estado final, criando um efeito mais sutil."
-    },
-    {
-        "code": "            0 0 0 0 transparent; ",
-        "explanation": "Define que não há sombra adicional para o estado final."
-    },
-    {
-        "code": "    }",
-        "explanation": "Fecha a definição do estado final da animação."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a definição da animação pulse."
-    },
-    {
-        "code": ".timer-bar {",
-        "explanation": "Inicia a regra CSS para a classe timer-bar, que representa a barra de progresso do temporizador."
-    },
-    {
-        "code": "    position: absolute;",
-        "explanation": "Define a posição da barra como absoluta, permitindo que ela se sobreponha ao círculo do temporizador."
-    },
-    {
-        "code": "    top: 0;",
-        "explanation": "Alinha a barra de progresso ao topo do seu contêiner pai."
-    },
-    {
-        "code": "    left: 0;",
-        "explanation": "Alinha a barra de progresso à esquerda do seu contêiner pai."
-    },
-    {
-        "code": "    width: 100%;",
-        "explanation": "Define a largura da barra de progresso como 100% do contêiner pai, garantindo que ela preencha todo o espaço disponível."
-    },
-    {
-        "code": "    height: 100%;",
-        "explanation": "Define a altura da barra de progresso como 100% do contêiner pai, garantindo que ela seja do mesmo tamanho que o círculo."
-    },
-    {
-        "code": "    border-radius: 50%;",
-        "explanation": "Define a borda como arredondada em 50%, transformando a barra de progresso em um círculo."
-    },
-    {
-        "code": "    clip-path: circle(50% at center);",
-        "explanation": "Define um caminho de recorte que transforma a barra em um círculo, mantendo apenas a parte visível dentro do contêiner."
-    },
-    {
-        "code": "    background: conic-gradient(#F44336 calc(var(--progress) * 3.6deg), transparent calc(var(--progress) * 3.6deg));",
-        "explanation": "Aplica um gradiente cônico que representa o progresso do temporizador, utilizando a variável --progress para determinar a extensão do vermelho (#F44336)."
-    },
-    {
-        "code": "    transition: var(--transition, none);",
-        "explanation": "Define uma transição que será aplicada quando a variável --transition for alterada, permitindo um efeito suave ao mudar o progresso."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a regra CSS para a classe .timer-bar."
-    },
-    {
-        "code": ".timer-display {",
-        "explanation": "Inicia a regra CSS para a classe timer-display, que representa a área onde o tempo restante é exibido."
-    },
-    {
-        "code": "    position: relative;",
-        "explanation": "Define a posição da área de exibição como relativa, permitindo que elementos internos sejam posicionados em relação a ela."
-    },
-    {
-        "code": "    z-index: 1;",
-        "explanation": "Define um valor de empilhamento para a área de exibição, garantindo que ela fique acima do círculo e da barra de progresso."
-    },
-    {
-        "code": "    text-align: center;",
-        "explanation": "Centraliza o texto dentro da área de exibição, tornando-o visualmente mais atraente."
-    },
-    {
-        "code": "    font-size: 24px;",
-        "explanation": "Define o tamanho da fonte do texto na área de exibição como 24 pixels, tornando-o legível."
-    },
-    {
-        "code": "    font-weight: bold;",
-        "explanation": "Define o peso da fonte como negrito, destacando o tempo restante."
-    },
-    {
-        "code": "    color: rgb(255, 255, 255);",
-        "explanation": "Define a cor do texto como branca, garantindo um bom contraste com o fundo escuro."
-    },
-    {
-        "code": "    line-height: 200px;",
-        "explanation": "Define a altura da linha como 200 pixels, centralizando verticalmente o texto dentro do círculo."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a regra CSS para a classe .timer-display."
-    },
-    {
-        "code": ".timer-buttons {",
-        "explanation": "Inicia a regra CSS para a classe timer-buttons, que representa o contêiner dos botões de controle do temporizador."
-    },
-    {
-        "code": "    margin-top: 20px;",
-        "explanation": "Adiciona uma margem superior de 20 pixels ao contêiner dos botões, separando-os do temporizador."
+        "code": "    height: 100vh;",
+        "explanation": "Define a altura do corpo da página como 100% da altura da janela de visualização (viewport height), garantindo que ocupe toda a altura da tela."
     },
     {
         "code": "    display: flex;",
-        "explanation": "Define o contêiner dos botões como um flex container, permitindo uma disposição horizontal dos botões."
+        "explanation": "Define o layout do corpo como flexível, permitindo que os elementos filhos sejam dispostos e alinhados usando flexbox."
     },
     {
-        "code": "    justify-content: space-around;",
-        "explanation": "Distribui o espaço disponível igualmente entre os botões dentro do contêiner."
+        "code": "    flex-direction: column;",
+        "explanation": "Organiza os itens filhos do corpo em uma coluna, empilhando-os verticalmente."
     },
     {
-        "code": "}",
-        "explanation": "Fecha a regra CSS para a classe .timer-buttons."
+        "code": "    align-items: center;",
+        "explanation": "Centraliza os itens filhos horizontalmente no corpo da página."
     },
     {
-        "code": ".timer-buttons button {",
-        "explanation": "Inicia a regra CSS para os botões dentro do contêiner de botões do temporizador."
+        "code": "    justify-content: space-between;",
+        "explanation": "Distribui o espaço disponível entre os itens filhos do corpo da página, posicionando o primeiro item no topo e o último na parte inferior."
     },
     {
-        "code": "    background-color: #4CAF50;",
-        "explanation": "Define a cor de fundo dos botões como verde (#4CAF50), mantendo a consistência com o botão de adicionar tarefa."
+        "code": "    background: #010213;",
+        "explanation": "Define a cor de fundo do corpo da página como um tom escuro de azul (#010213)."
     },
     {
-        "code": "    color: #fff;",
-        "explanation": "Define a cor do texto dos botões como branca, garantindo um bom contraste com o fundo verde."
-    },
-    {
-        "code": "    border: none;",
-        "explanation": "Remove a borda padrão dos botões, proporcionando uma aparência mais limpa."
-    },
-    {
-        "code": "    padding: 10px 20px;",
-        "explanation": "Adiciona um preenchimento de 10 pixels na parte superior e inferior e 20 pixels nas laterais dos botões, tornando-os mais clicáveis."
-    },
-    {
-        "code": "    font-size: 16px;",
-        "explanation": "Define o tamanho da fonte dos botões como 16 pixels, garantindo que sejam legíveis."
-    },
-    {
-        "code": "    cursor: pointer;",
-        "explanation": "Altera o cursor para um ponteiro quando o mouse passa sobre os botões, indicando que eles são clicáveis."
-    },
-    {
-        "code": "    border-radius: 5px;",
-        "explanation": "Adiciona cantos arredondados de 5 pixels aos botões, melhorando sua estética."
+        "code": "    font-family: 'Bebas Neue', cursive;",
+        "explanation": "Define a fonte do corpo da página como 'Bebas Neue', com uma fonte cursiva como alternativa, garantindo a consistência na estilização do texto."
     },
     {
         "code": "}",
-        "explanation": "Fecha a regra CSS para os botões dentro do contêiner de botões do temporizador."
+        "explanation": "Fecha a estilização do elemento <body>."
     },
     {
-        "code": ".timer-buttons button:hover {",
-        "explanation": "Inicia a regra CSS para o estado de foco dos botões, que é aplicado quando o mouse passa sobre eles."
+        "code": "header {",
+        "explanation": "Inicia a estilização do elemento <header>, que geralmente contém o título ou o cabeçalho da página."
     },
     {
-        "code": "    background-color: #45a049;",
-        "explanation": "Muda a cor de fundo dos botões para um verde mais escuro quando o mouse está sobre eles, indicando que eles estão ativos."
+        "code": "    width: 100%;",
+        "explanation": "Define a largura do cabeçalho como 100% da largura da janela de visualização."
     },
     {
-        "code": "}",
-        "explanation": "Fecha a regra CSS para o estado de foco dos botões."
-    },
-    {
-        "code": ".timer-buttons button:disabled {",
-        "explanation": "Inicia a regra CSS para o estado desativado dos botões."
-    },
-    {
-        "code": "    background-color: #45a049;",
-        "explanation": "Define a cor de fundo dos botões desativados como verde mais escuro, para manter a aparência, mesmo quando não estão ativos."
-    },
-    {
-        "code": "    cursor: not-allowed;",
-        "explanation": "Altera o cursor para indicar que a interação com os botões desativados não é permitida."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a regra CSS para o estado desativado dos botões."
-    },
-    {
-        "code": ".contacts {",
-        "explanation": "Inicia a regra CSS para a classe contacts, que representa a seção de contatos."
+        "code": "    text-align: center;",
+        "explanation": "Centraliza o texto dentro do cabeçalho horizontalmente."
     },
     {
         "code": "    margin-top: 20px;",
-        "explanation": "Adiciona uma margem superior de 20 pixels à seção de contatos, separando-a de outros elementos."
+        "explanation": "Adiciona uma margem superior de 20 pixels ao cabeçalho, separando-o do conteúdo acima."
     },
     {
-        "code": "    padding: 10px;",
-        "explanation": "Adiciona um preenchimento de 10 pixels ao redor da seção de contatos, criando espaço interno."
+        "code": "}",
+        "explanation": "Fecha a estilização do elemento <header>."
     },
     {
-        "code": "    background-color: #f1f1f1;",
-        "explanation": "Define a cor de fundo da seção de contatos como cinza claro (#f1f1f1), destacando-a do restante da página."
+        "code": ".animated-title {",
+        "explanation": "Inicia a estilização de um elemento com a classe 'animated-title', provavelmente um título com animações especiais."
+    },
+    {
+        "code": "    font-size: 48px;",
+        "explanation": "Define o tamanho da fonte do título como 48 pixels, tornando-o bastante grande e visível."
+    },
+    {
+        "code": "    font-weight: bold;",
+        "explanation": "Define o peso da fonte como negrito, fazendo com que o título se destaque."
+    },
+    {
+        "code": "    background: linear-gradient(270deg, #ff0000, #ff9900, #00ff00, #0000ff, #9900ff);",
+        "explanation": "Aplica um gradiente linear como fundo do texto, com uma transição de cores que vai de vermelho a roxo."
+    },
+    {
+        "code": "    background-size: 1000%;",
+        "explanation": "Define o tamanho do fundo do gradiente como 1000%, permitindo que o gradiente se mova suavemente durante a animação."
+    },
+    {
+        "code": "    -webkit-background-clip: text;",
+        "explanation": "Usa a propriedade 'background-clip' com prefixo '-webkit-' para aplicar o gradiente apenas ao texto, criando um efeito visual interessante."
+    },
+    {
+        "code": "    -webkit-text-fill-color: transparent;",
+        "explanation": "Define a cor do preenchimento do texto como transparente para permitir que o gradiente de fundo seja visível."
+    },
+    {
+        "code": "    animation: gradient-animation 10s ease infinite, blink-animation 1.5s step-start infinite;",
+        "explanation": "Aplica duas animações ao título: 'gradient-animation' que altera a posição do gradiente a cada 10 segundos e 'blink-animation' que faz o texto piscar a cada 1.5 segundos."
+    },
+    {
+        "code": "    text-align: center;",
+        "explanation": "Centraliza o texto dentro do elemento com a classe 'animated-title'."
+    },
+    {
+        "code": "    margin: 20px 0;",
+        "explanation": "Adiciona uma margem de 20 pixels acima e abaixo do título, separando-o de outros elementos."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização do elemento com a classe 'animated-title'."
+    },
+    {
+        "code": "@keyframes gradient-animation {",
+        "explanation": "Define a animação chamada 'gradient-animation', que altera a posição do gradiente ao longo do tempo."
+    },
+    {
+        "code": "    0% { background-position: 0% 50%; }",
+        "explanation": "Define o ponto de partida da animação do gradiente, com a posição inicial do fundo no início do ciclo de animação."
+    },
+    {
+        "code": "    50% { background-position: 100% 50%; }",
+        "explanation": "Define o ponto médio da animação do gradiente, movendo o fundo para a posição final ao meio do ciclo de animação."
+    },
+    {
+        "code": "    100% { background-position: 0% 50%; }",
+        "explanation": "Define o ponto final da animação do gradiente, retornando à posição inicial ao final do ciclo de animação."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a definição da animação 'gradient-animation'."
+    },
+    {
+        "code": "@keyframes blink-animation {",
+        "explanation": "Define a animação chamada 'blink-animation', que faz o texto piscar ao longo do tempo."
+    },
+    {
+        "code": "    0%, 49% { opacity: 1; }",
+        "explanation": "Define a opacidade do texto como 1 (totalmente visível) no início da animação e até 49% do tempo."
+    },
+    {
+        "code": "    50%, 100% { opacity: 0; }",
+        "explanation": "Define a opacidade do texto como 0 (totalmente invisível) ao meio e ao final da animação, criando o efeito de piscar."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a definição da animação 'blink-animation'."
+    },
+    {
+        "code": ".main {",
+        "explanation": "Inicia a estilização de um elemento com a classe 'main', que é provavelmente um contêiner principal para a calculadora."
+    },
+    {
+        "code": "    display: flex;",
+        "explanation": "Define o layout do contêiner como flexível, permitindo que os itens internos sejam alinhados usando flexbox."
+    },
+    {
+        "code": "    justify-content: center;",
+        "explanation": "Centraliza os itens filhos horizontalmente dentro do contêiner 'main'."
+    },
+    {
+        "code": "    flex-direction: column;",
+        "explanation": "Organiza os itens filhos do contêiner 'main' em uma coluna, empilhando-os verticalmente."
+    },
+    {
+        "code": "    align-items: center;",
+        "explanation": "Centraliza os itens filhos verticalmente dentro do contêiner 'main'."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização do contêiner com a classe 'main'."
+    },
+    {
+        "code": ".input-container {",
+        "explanation": "Inicia a estilização do contêiner com a classe 'input-container', que provavelmente envolve o campo de entrada e o botão de limpar."
+    },
+    {
+        "code": "    display: flex;",
+        "explanation": "Define o layout do contêiner 'input-container' como flexível, permitindo que os itens internos sejam alinhados usando flexbox."
+    },
+    {
+        "code": "    align-items: center;",
+        "explanation": "Alinha os itens internos verticalmente no centro do contêiner 'input-container'."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização do contêiner com a classe 'input-container'."
+    },
+    {
+        "code": "input {",
+        "explanation": "Inicia a estilização do elemento <input>, que é um campo de entrada de texto."
+    },
+    {
+        "code": "    color: #ffffff;",
+        "explanation": "Define a cor do texto dentro do campo de entrada como branco."
+    },
+    {
+        "code": "    padding: 17px;",
+        "explanation": "Adiciona um espaçamento interno de 17 pixels ao redor do texto dentro do campo de entrada."
+    },
+    {
+        "code": "    outline: none;",
+        "explanation": "Remove a borda de foco padrão ao redor do campo de entrada para um estilo mais limpo."
+    },
+    {
+        "code": "    font-size: 30px;",
+        "explanation": "Define o tamanho da fonte dentro do campo de entrada como 30 pixels, tornando o texto maior e mais legível."
+    },
+    {
+        "code": "    font-family: 'Bebas Neue', cursive;",
+        "explanation": "Define a fonte do texto dentro do campo de entrada como 'Bebas Neue', com uma fonte cursiva como alternativa."
+    },
+    {
+        "code": "    border-radius: 25%;",
+        "explanation": "Aplica bordas arredondadas ao campo de entrada, com um raio de 25%."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização do elemento <input>."
+    },
+    {
+        "code": ".num {",
+        "explanation": "Inicia a estilização de elementos com a classe 'num', que são provavelmente botões numéricos ou semelhantes."
+    },
+    {
+        "code": "    width: 64px;",
+        "explanation": "Define a largura dos elementos com a classe 'num' como 64 pixels."
+    },
+    {
+        "code": "    height: 67px;",
+        "explanation": "Define a altura dos elementos com a classe 'num' como 67 pixels."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização dos elementos com a classe 'num'."
+    },
+    {
+        "code": ".text {",
+        "explanation": "Inicia a estilização de elementos com a classe 'text', que são provavelmente campos de texto ou rótulos."
+    },
+    {
+        "code": "    width: 160px;",
+        "explanation": "Define a largura dos elementos com a classe 'text' como 160 pixels."
+    },
+    {
+        "code": "    height: 26px;",
+        "explanation": "Define a altura dos elementos com a classe 'text' como 26 pixels."
+    },
+    {
+        "code": "    border-radius: 22px;",
+        "explanation": "Aplica bordas arredondadas aos elementos com a classe 'text', com um raio de 22 pixels."
+    },
+    {
+        "code": "    letter-spacing: 5px;",
+        "explanation": "Define o espaçamento entre as letras dentro dos elementos com a classe 'text' como 5 pixels, aumentando a legibilidade."
+    },
+    {
+        "code": "    text-align: center;",
+        "explanation": "Centraliza o texto dentro dos elementos com a classe 'text'."
+    },
+    {
+        "code": "    margin-bottom: 12px;",
+        "explanation": "Adiciona uma margem inferior de 12 pixels aos elementos com a classe 'text', separando-os de outros elementos abaixo."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização dos elementos com a classe 'text'."
+    },
+    {
+        "code": ".text1 {",
+        "explanation": "Inicia a estilização de elementos com a classe 'text1', que são provavelmente botões semelhantes aos 'text'."
+    },
+    {
+        "code": "    width: 64px;",
+        "explanation": "Define a largura dos elementos com a classe 'text1' como 64 pixels."
+    },
+    {
+        "code": "    height: 67px;",
+        "explanation": "Define a altura dos elementos com a classe 'text1' como 67 pixels."
+    },
+    {
+        "code": "    border-radius: 25%;",
+        "explanation": "Aplica bordas arredondadas aos elementos com a classe 'text1', com um raio de 25%."
+    },
+    {
+        "code": "    letter-spacing: 5px;",
+        "explanation": "Define o espaçamento entre as letras dentro dos elementos com a classe 'text1' como 5 pixels."
+    },
+    {
+        "code": "    text-align: center;",
+        "explanation": "Centraliza o texto dentro dos elementos com a classe 'text1'."
+    },
+    {
+        "code": "    margin-bottom: 12px;",
+        "explanation": "Adiciona uma margem inferior de 12 pixels aos elementos com a classe 'text1', separando-os de outros elementos abaixo."
+    },
+    {
+        "code": "    cursor: pointer;",
+        "explanation": "Define o cursor como 'pointer' quando o mouse passa sobre os elementos com a classe 'text1', indicando que eles são clicáveis."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização dos elementos com a classe 'text1'."
+    },
+    {
+        "code": ".maincolor {",
+        "explanation": "Inicia a estilização de elementos com a classe 'maincolor', que tem um fundo preto."
+    },
+    {
+        "code": "    background-color: #000;",
+        "explanation": "Define a cor de fundo dos elementos com a classe 'maincolor' como preta (#000)."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização dos elementos com a classe 'maincolor'."
+    },
+    {
+        "code": ".blue {",
+        "explanation": "Inicia a estilização de elementos com a classe 'blue', que tem um fundo verde claro."
+    },
+    {
+        "code": "    background-color: rgb(116, 189, 34);",
+        "explanation": "Define a cor de fundo dos elementos com a classe 'blue' como verde claro (rgb(116, 189, 34))."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização dos elementos com a classe 'blue'."
+    },
+    {
+        "code": ".pin {",
+        "explanation": "Inicia a estilização de elementos com a classe 'pin', que tem um fundo vermelho."
+    },
+    {
+        "code": "    background-color: rgb(236, 72, 72);",
+        "explanation": "Define a cor de fundo dos elementos com a classe 'pin' como vermelho (rgb(236, 72, 72))."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização dos elementos com a classe 'pin'."
+    },
+    {
+        "code": ".gre {",
+        "explanation": "Inicia a estilização de elementos com a classe 'gre', que tem um fundo azul."
+    },
+    {
+        "code": "    background-color: rgb(37, 37, 238);",
+        "explanation": "Define a cor de fundo dos elementos com a classe 'gre' como azul (rgb(37, 37, 238))."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização dos elementos com a classe 'gre'."
+    },
+    {
+        "code": ".pur {",
+        "explanation": "Inicia a estilização de elementos com a classe 'pur', que tem um fundo roxo."
+    },
+    {
+        "code": "    background-color: #793fee;",
+        "explanation": "Define a cor de fundo dos elementos com a classe 'pur' como roxo (#793fee)."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização dos elementos com a classe 'pur'."
+    },
+    {
+        "code": ".ora {",
+        "explanation": "Inicia a estilização de elementos com a classe 'ora', que tem um fundo laranja."
+    },
+    {
+        "code": "    background-color: #fcb707;",
+        "explanation": "Define a cor de fundo dos elementos com a classe 'ora' como laranja (#fcb707)."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização dos elementos com a classe 'ora'."
+    },
+    {
+        "code": ".red {",
+        "explanation": "Inicia a estilização de elementos com a classe 'red', que tem um fundo vermelho."
+    },
+    {
+        "code": "    background-color: #ff0000;",
+        "explanation": "Define a cor de fundo dos elementos com a classe 'red' como vermelho (#ff0000)."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização dos elementos com a classe 'red'."
+    },
+    {
+        "code": ".del-button {",
+        "explanation": "Inicia a estilização do botão com a classe 'del-button', que representa um botão de exclusão."
+    },
+    {
+        "code": "    width: 132px;",
+        "explanation": "Define a largura do botão com a classe 'del-button' como 132 pixels."
+    },
+    {
+        "code": "    height: 67px;",
+        "explanation": "Define a altura do botão com a classe 'del-button' como 67 pixels."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização do botão com a classe 'del-button'."
+    },
+    {
+        "code": ".clear-input-button {",
+        "explanation": "Inicia a estilização do botão de limpar entrada com a classe 'clear-input-button'."
+    },
+    {
+        "code": "    width: 64px;",
+        "explanation": "Define a largura do botão de limpar entrada como 64 pixels."
+    },
+    {
+        "code": "    height: 67px;",
+        "explanation": "Define a altura do botão de limpar entrada como 67 pixels."
+    },
+    {
+        "code": "    background-color: #ff0000;",
+        "explanation": "Define a cor de fundo do botão de limpar entrada como vermelho (#ff0000)."
+    },
+    {
+        "code": "    color: #ffffff;",
+        "explanation": "Define a cor do texto no botão de limpar entrada como branco (#ffffff)."
+    },
+    {
+        "code": "    font-size: 30px;",
+        "explanation": "Define o tamanho da fonte do texto no botão de limpar entrada como 30 pixels."
+    },
+    {
+        "code": "    border: none;",
+        "explanation": "Remove a borda padrão do botão de limpar entrada."
+    },
+    {
+        "code": "    border-radius: 25%;",
+        "explanation": "Aplica bordas arredondadas ao botão de limpar entrada com um raio de 25%."
+    },
+    {
+        "code": "    cursor: pointer;",
+        "explanation": "Define o cursor como 'pointer' quando o mouse passa sobre o botão de limpar entrada, indicando que ele é clicável."
+    },
+    {
+        "code": "    transition: background-color 0.3s;",
+        "explanation": "Aplica uma transição suave de 0.3 segundos para a cor de fundo do botão de limpar entrada."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização do botão de limpar entrada com a classe 'clear-input-button'."
+    },
+    {
+        "code": ".clear-input-button:hover {",
+        "explanation": "Inicia a estilização do botão de limpar entrada quando o mouse passa sobre ele."
+    },
+    {
+        "code": "    background-color: #cc0000;",
+        "explanation": "Define a cor de fundo do botão de limpar entrada como vermelho mais escuro (#cc0000) quando o mouse passa sobre ele."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização do botão de limpar entrada quando o mouse passa sobre ele."
+    },
+    {
+        "code": "#history {",
+        "explanation": "Inicia a estilização do elemento com o id 'history', que provavelmente é uma área para exibir o histórico."
+    },
+    {
+        "code": "    color: #ffffff;",
+        "explanation": "Define a cor do texto no histórico como branco (#ffffff)."
+    },
+    {
+        "code": "    font-family: 'Bebas Neue', cursive;",
+        "explanation": "Define a fonte do texto no histórico como 'Bebas Neue', com uma fonte cursiva como alternativa."
+    },
+    {
+        "code": "    font-size: 20px;",
+        "explanation": "Define o tamanho da fonte no histórico como 20 pixels."
+    },
+    {
+        "code": "    margin-top: 10px;",
+        "explanation": "Adiciona uma margem superior de 10 pixels ao histórico para separá-lo dos elementos acima."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização do elemento com o id 'history'."
+    },
+    {
+        "code": ".clear-history-button {",
+        "explanation": "Inicia a estilização do botão para limpar o histórico com a classe 'clear-history-button'."
+    },
+    {
+        "code": "    margin-top: 10px;",
+        "explanation": "Adiciona uma margem superior de 10 pixels ao botão de limpar histórico para separá-lo dos elementos acima."
+    },
+    {
+        "code": "    padding: 2px 50px;",
+        "explanation": "Define um preenchimento de 2 pixels na parte superior e inferior e 50 pixels nas laterais do botão de limpar histórico."
+    },
+    {
+        "code": "    background-color: #ff0000;",
+        "explanation": "Define a cor de fundo do botão de limpar histórico como vermelho (#ff0000)."
+    },
+    {
+        "code": "    color: #ffffff;",
+        "explanation": "Define a cor do texto no botão de limpar histórico como branco (#ffffff)."
+    },
+    {
+        "code": "    border: none;",
+        "explanation": "Remove a borda padrão do botão de limpar histórico."
     },
     {
         "code": "    border-radius: 5px;",
-        "explanation": "Adiciona cantos arredondados de 5 pixels à seção de contatos, melhorando sua aparência visual."
+        "explanation": "Aplica bordas arredondadas ao botão de limpar histórico com um raio de 5 pixels."
+    },
+    {
+        "code": "    cursor: pointer;",
+        "explanation": "Define o cursor como 'pointer' quando o mouse passa sobre o botão de limpar histórico, indicando que ele é clicável."
+    },
+    {
+        "code": "    font-size: 18px;",
+        "explanation": "Define o tamanho da fonte do texto no botão de limpar histórico como 18 pixels."
+    },
+    {
+        "code": "    font-family: 'Bebas Neue', cursive;",
+        "explanation": "Define a fonte do texto no botão de limpar histórico como 'Bebas Neue', com uma fonte cursiva como alternativa."
     },
     {
         "code": "}",
-        "explanation": "Fecha a regra CSS para a classe contacts."
+        "explanation": "Fecha a estilização do botão de limpar histórico com a classe 'clear-history-button'."
     },
     {
-        "code": ".contact-item {",
-        "explanation": "Inicia a regra CSS para a classe contact-item, que representa cada item de contato."
+        "code": ".clear-history-button:hover {",
+        "explanation": "Inicia a estilização do botão de limpar histórico quando o mouse passa sobre ele."
     },
     {
-        "code": "    margin-bottom: 10px;",
-        "explanation": "Adiciona uma margem inferior de 10 pixels a cada item de contato, criando espaço entre eles."
+        "code": "    background-color: #cc0000;",
+        "explanation": "Define a cor de fundo do botão de limpar histórico como vermelho mais escuro (#cc0000) quando o mouse passa sobre ele."
     },
     {
         "code": "}",
-        "explanation": "Fecha a regra CSS para a classe contact-item."
+        "explanation": "Fecha a estilização do botão de limpar histórico quando o mouse passa sobre ele."
+    },
+    {
+        "code": "footer {",
+        "explanation": "Inicia a estilização do elemento <footer>, que é a área de rodapé da página."
+    },
+    {
+        "code": "    background-color: #010213;",
+        "explanation": "Define a cor de fundo do rodapé como preta (#010213), combinando com o tema geral da página."
+    },
+    {
+        "code": "    color: #ffffff;",
+        "explanation": "Define a cor do texto no rodapé como branca (#ffffff)."
+    },
+    {
+        "code": "    text-align: center;",
+        "explanation": "Centraliza o texto dentro do rodapé."
+    },
+    {
+        "code": "    padding: 15px 0;",
+        "explanation": "Adiciona um espaçamento interno de 15 pixels na parte superior e inferior do rodapé."
+    },
+    {
+        "code": "    width: 100%;",
+        "explanation": "Define a largura do rodapé como 100% da largura da página, fazendo com que ocupe toda a largura disponível."
+    },
+    {
+        "code": "    font-family: 'Bebas Neue', cursive;",
+        "explanation": "Define a fonte do texto no rodapé como 'Bebas Neue', com uma fonte cursiva como alternativa."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização do elemento <footer>."
+    },
+    {
+        "code": "footer p {",
+        "explanation": "Inicia a estilização dos parágrafos dentro do elemento <footer>."
+    },
+    {
+        "code": "    margin: 5px 0;",
+        "explanation": "Adiciona uma margem de 5 pixels na parte superior e inferior dos parágrafos dentro do rodapé, separando-os de outros elementos."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização dos parágrafos dentro do elemento <footer>."
+    },
+    {
+        "code": "footer a {",
+        "explanation": "Inicia a estilização dos links dentro do elemento <footer>."
+    },
+    {
+        "code": "    color: #fcb707;",
+        "explanation": "Define a cor dos links dentro do rodapé como laranja (#fcb707)."
+    },
+    {
+        "code": "    text-decoration: none;",
+        "explanation": "Remove o sublinhado dos links dentro do rodapé."
+    },
+    {
+        "code": "    font-weight: bold;",
+        "explanation": "Define o texto dos links dentro do rodapé como negrito."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização dos links dentro do elemento <footer>."
+    },
+    {
+        "code": "footer a:hover {",
+        "explanation": "Inicia a estilização dos links dentro do rodapé quando o mouse passa sobre eles."
+    },
+    {
+        "code": "    color: #f4a261;",
+        "explanation": "Define a cor dos links dentro do rodapé como um tom de laranja (#f4a261) quando o mouse passa sobre eles."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a estilização dos links dentro do rodapé quando o mouse passa sobre eles."
     }
 ]

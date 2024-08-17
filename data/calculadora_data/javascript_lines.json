@@ -1,530 +1,350 @@
 [
     {
-        "code": "// Selecionando elementos do DOM",
-        "explanation": "Este é um comentário que indica que as próximas linhas de código são responsáveis por selecionar elementos do Document Object Model (DOM), que representa a estrutura do documento HTML."
+        "code": "function displaynum(n1) {",
+        "explanation": "Define a função 'displaynum' que recebe um argumento 'n1', que representa um número ou operador para ser exibido na tela da calculadora."
     },
     {
-        "code": "const taskInput = document.getElementById('task-input');",
-        "explanation": "Seleciona o elemento de entrada de texto (input) onde o usuário pode digitar novas tarefas, armazenando a referência na variável taskInput."
-    },
-    {
-        "code": "const addTaskBtn = document.getElementById('add-task-btn');",
-        "explanation": "Seleciona o botão para adicionar novas tarefas, armazenando a referência na variável addTaskBtn."
-    },
-    {
-        "code": "const taskList = document.getElementById('task-list');",
-        "explanation": "Seleciona o elemento que contém a lista de tarefas (ul ou ol), armazenando a referência na variável taskList."
-    },
-    {
-        "code": "const timerDisplay = document.getElementById('timer');",
-        "explanation": "Seleciona o elemento onde o tempo restante do temporizador será exibido, armazenando a referência na variável timerDisplay."
-    },
-    {
-        "code": "const timerCircle = document.getElementById('timer-circle');",
-        "explanation": "Seleciona o elemento que representa a forma do temporizador, armazenando a referência na variável timerCircle."
-    },
-    {
-        "code": "const startBtn = document.getElementById('start-btn');",
-        "explanation": "Seleciona o botão para iniciar o temporizador, armazenando a referência na variável startBtn."
-    },
-    {
-        "code": "const pauseBtn = document.getElementById('pause-btn');",
-        "explanation": "Seleciona o botão para pausar o temporizador, armazenando a referência na variável pauseBtn."
-    },
-    {
-        "code": "const resetBtn = document.getElementById('reset-btn');",
-        "explanation": "Seleciona o botão para resetar o temporizador, armazenando a referência na variável resetBtn."
-    },
-    {
-        "code": "// Variáveis do temporizador",
-        "explanation": "Este é um comentário que indica que as próximas linhas de código são responsáveis por declarar variáveis relacionadas ao funcionamento do temporizador."
-    },
-    {
-        "code": "let timerInterval;",
-        "explanation": "Declara uma variável timerInterval que será usada para armazenar a referência ao intervalo de tempo (setInterval) para o temporizador."
-    },
-    {
-        "code": "let timerRunning = false;",
-        "explanation": "Declara uma variável booleana timerRunning que indica se o temporizador está atualmente em execução."
-    },
-    {
-        "code": "let timeLeft = 1500;",
-        "explanation": "Declara uma variável timeLeft e inicializa com 1500 segundos (25 minutos), que é o tempo padrão de uma sessão de trabalho no método Pomodoro."
-    },
-    {
-        "code": "let sessionCount = 0;",
-        "explanation": "Declara uma variável sessionCount que conta quantas sessões de trabalho foram completadas, começando em zero."
-    },
-    {
-        "code": "// Função para carregar tarefas do LocalStorage",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por carregar tarefas armazenadas no LocalStorage."
-    },
-    {
-        "code": "function loadTasks() {",
-        "explanation": "Declara a função loadTasks que será responsável por carregar as tarefas do LocalStorage."
-    },
-    {
-        "code": "const tasks = JSON.parse(localStorage.getItem('tasks')) || [];",
-        "explanation": "Tenta recuperar a lista de tarefas do LocalStorage e a converte de volta de uma string JSON para um array. Se não houver tarefas, inicializa um array vazio."
-    },
-    {
-        "code": "tasks.forEach(task => addTaskToDOM(task));",
-        "explanation": "Itera sobre cada tarefa carregada e chama a função addTaskToDOM para adicionar cada tarefa à interface do usuário."
+        "code": "    Calculator.text1.value += n1;",
+        "explanation": "Adiciona o valor do argumento 'n1' ao campo de entrada da calculadora (text1). Isso permite que o número ou operador seja mostrado na tela da calculadora."
     },
     {
         "code": "}",
-        "explanation": "Fecha a definição da função loadTasks."
+        "explanation": "Fecha a definição da função 'displaynum'."
     },
     {
-        "code": "// Função para salvar tarefas no LocalStorage",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por salvar as tarefas atuais no LocalStorage."
+        "code": "function calculate() {",
+        "explanation": "Define a função 'calculate' que avalia a expressão matemática inserida na calculadora e exibe o resultado."
     },
     {
-        "code": "function saveTasks() {",
-        "explanation": "Declara a função saveTasks que será responsável por salvar as tarefas no LocalStorage."
+        "code": "    var expression = Calculator.text1.value;",
+        "explanation": "Armazena o valor atual do campo de entrada da calculadora em uma variável chamada 'expression'."
     },
     {
-        "code": "const tasks = [];",
-        "explanation": "Declara um array vazio chamado tasks que será usado para armazenar as tarefas que serão salvas."
+        "code": "    try {",
+        "explanation": "Inicia um bloco 'try' para tentar executar o código que pode gerar erros, como a avaliação da expressão."
     },
     {
-        "code": "taskList.querySelectorAll('li').forEach(taskItem => {",
-        "explanation": "Seleciona todos os itens de tarefa (li) na lista de tarefas e itera sobre cada um deles."
+        "code": "        var result = eval(expression);",
+        "explanation": "Usa a função 'eval' para avaliar a expressão matemática e armazena o resultado na variável 'result'."
     },
     {
-        "code": "tasks.push(taskItem.textContent.trim());",
-        "explanation": "Adiciona o texto de cada item de tarefa ao array tasks, removendo espaços em branco extras."
+        "code": "        updateHistory(expression, result);",
+        "explanation": "Chama a função 'updateHistory' para adicionar a expressão e seu resultado ao histórico de cálculos."
+    },
+    {
+        "code": "        Calculator.text1.value = result;",
+        "explanation": "Exibe o resultado da avaliação no campo de entrada da calculadora."
+    },
+    {
+        "code": "        saveHistory(expression, result);",
+        "explanation": "Chama a função 'saveHistory' para armazenar a expressão e seu resultado no armazenamento local (localStorage)."
+    },
+    {
+        "code": "    } catch (e) {",
+        "explanation": "Inicia um bloco 'catch' para capturar e lidar com erros que possam ocorrer durante a avaliação da expressão."
+    },
+    {
+        "code": "        Calculator.text1.value = \"Error\";",
+        "explanation": "Se ocorrer um erro na avaliação da expressão, exibe 'Error' no campo de entrada da calculadora."
+    },
+    {
+        "code": "    }",
+        "explanation": "Fecha o bloco 'catch'."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a definição da função 'calculate'."
+    },
+    {
+        "code": "function deleteLastChar() {",
+        "explanation": "Define a função 'deleteLastChar' que remove o último caractere do campo de entrada da calculadora."
+    },
+    {
+        "code": "    var currentValue = Calculator.text1.value;",
+        "explanation": "Armazena o valor atual do campo de entrada da calculadora em uma variável chamada 'currentValue'."
+    },
+    {
+        "code": "    if (currentValue.length > 0) {",
+        "explanation": "Verifica se há caracteres no campo de entrada antes de tentar remover o último caractere."
+    },
+    {
+        "code": "        Calculator.text1.value = currentValue.substring(0, currentValue.length - 1);",
+        "explanation": "Remove o último caractere do campo de entrada ao definir o valor para a substring que exclui o último caractere."
+    },
+    {
+        "code": "    }",
+        "explanation": "Fecha o bloco 'if'."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a definição da função 'deleteLastChar'."
+    },
+    {
+        "code": "var historyDisplay = document.getElementById(\"history\");",
+        "explanation": "Obtém o elemento HTML com o id 'history' e o armazena na variável 'historyDisplay', que será usado para exibir o histórico de cálculos."
+    },
+    {
+        "code": "function updateHistory(expression, result) {",
+        "explanation": "Define a função 'updateHistory' que atualiza a área de histórico com a nova expressão e seu resultado."
+    },
+    {
+        "code": "    historyDisplay.innerText += `\\n${expression} = ${result}`;",
+        "explanation": "Adiciona a nova expressão e resultado ao texto atual do histórico, formatado com uma nova linha."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a definição da função 'updateHistory'."
+    },
+    {
+        "code": "function saveHistory(expression, result) {",
+        "explanation": "Define a função 'saveHistory' que salva o histórico de cálculos no armazenamento local (localStorage)."
+    },
+    {
+        "code": "    let history = JSON.parse(localStorage.getItem(\"calculatorHistory\")) || [];",
+        "explanation": "Carrega o histórico atual do armazenamento local, se existir, e o analisa como um array. Se não houver histórico, inicializa um array vazio."
+    },
+    {
+        "code": "    history.push(`${expression} = ${result}`);",
+        "explanation": "Adiciona a nova expressão e resultado ao array de histórico."
+    },
+    {
+        "code": "    localStorage.setItem(\"calculatorHistory\", JSON.stringify(history));",
+        "explanation": "Salva o array de histórico atualizado no armazenamento local como uma string JSON."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a definição da função 'saveHistory'."
+    },
+    {
+        "code": "function loadHistory() {",
+        "explanation": "Define a função 'loadHistory' que carrega o histórico de cálculos do armazenamento local e o exibe na tela."
+    },
+    {
+        "code": "    let history = JSON.parse(localStorage.getItem(\"calculatorHistory\")) || [];",
+        "explanation": "Carrega o histórico atual do armazenamento local, se existir, e o analisa como um array. Se não houver histórico, inicializa um array vazio."
+    },
+    {
+        "code": "    historyDisplay.innerText = history.join(\"\\n\");",
+        "explanation": "Define o texto do elemento de histórico para o histórico armazenado, juntando os itens do array com uma nova linha entre eles."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a definição da função 'loadHistory'."
+    },
+    {
+        "code": "function insertComma() {",
+        "explanation": "Define a função 'insertComma' que adiciona uma vírgula ao campo de entrada da calculadora."
+    },
+    {
+        "code": "    Calculator.text1.value += \",\";",
+        "explanation": "Adiciona uma vírgula ao valor atual do campo de entrada da calculadora."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a definição da função 'insertComma'."
+    },
+    {
+        "code": "function calculatePercentage() {",
+        "explanation": "Define a função 'calculatePercentage' que calcula a porcentagem do valor atual no campo de entrada."
+    },
+    {
+        "code": "    var expression = Calculator.text1.value;",
+        "explanation": "Armazena o valor atual do campo de entrada da calculadora em uma variável chamada 'expression'."
+    },
+    {
+        "code": "    try {",
+        "explanation": "Inicia um bloco 'try' para tentar executar o código que pode gerar erros, como a avaliação da expressão."
+    },
+    {
+        "code": "        var result = eval(expression);",
+        "explanation": "Usa a função 'eval' para avaliar a expressão matemática e armazena o resultado na variável 'result'."
+    },
+    {
+        "code": "        if (!isNaN(result)) {",
+        "explanation": "Verifica se o resultado da expressão é um número válido."
+    },
+    {
+        "code": "            result /= 100;",
+        "explanation": "Divide o resultado por 100 para calcular a porcentagem."
+    },
+    {
+        "code": "            Calculator.text1.value = result;",
+        "explanation": "Exibe o resultado da porcentagem no campo de entrada da calculadora."
+    },
+    {
+        "code": "        } else {",
+        "explanation": "Inicia um bloco 'else' para lidar com o caso em que o resultado não é um número válido."
+    },
+    {
+        "code": "            Calculator.text1.value = \"Error\";",
+        "explanation": "Se o resultado não for um número válido, exibe 'Error' no campo de entrada da calculadora."
+    },
+    {
+        "code": "        }",
+        "explanation": "Fecha o bloco 'else'."
+    },
+    {
+        "code": "    } catch (e) {",
+        "explanation": "Inicia um bloco 'catch' para capturar e lidar com erros que possam ocorrer durante a avaliação da expressão."
+    },
+    {
+        "code": "        Calculator.text1.value = \"Error\";",
+        "explanation": "Se ocorrer um erro na avaliação da expressão, exibe 'Error' no campo de entrada da calculadora."
+    },
+    {
+        "code": "    }",
+        "explanation": "Fecha o bloco 'catch'."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a definição da função 'calculatePercentage'."
+    },
+    {
+        "code": "function clearHistory() {",
+        "explanation": "Define a função 'clearHistory' que limpa o histórico de cálculos exibido e o histórico salvo no armazenamento local."
+    },
+    {
+        "code": "    historyDisplay.innerText = \"\";",
+        "explanation": "Limpa o conteúdo do elemento de histórico na tela."
+    },
+    {
+        "code": "    localStorage.removeItem(\"calculatorHistory\");",
+        "explanation": "Remove o item 'calculatorHistory' do armazenamento local, efetivamente limpando o histórico salvo."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a definição da função 'clearHistory'."
+    },
+    {
+        "code": "function clearInput() {",
+        "explanation": "Define a função 'clearInput' que limpa apenas o campo de entrada da calculadora."
+    },
+    {
+        "code": "    Calculator.text1.value = \"\";",
+        "explanation": "Define o valor do campo de entrada da calculadora como uma string vazia, limpando o campo."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a definição da função 'clearInput'."
+    },
+    {
+        "code": "document.addEventListener('keydown', function(event) {",
+        "explanation": "Adiciona um evento de teclado para a página inteira, permitindo que as teclas pressionadas sejam capturadas e processadas."
+    },
+    {
+        "code": "    var key = event.key;",
+        "explanation": "Obtém a tecla pressionada do evento de teclado e armazena na variável 'key'."
+    },
+    {
+        "code": "    switch (key) {",
+        "explanation": "Inicia um bloco 'switch' para verificar qual tecla foi pressionada e executar a ação correspondente."
+    },
+    {
+        "code": "        case \"0\":",
+        "explanation": "Verifica se a tecla pressionada é '0'."
+    },
+    {
+        "code": "        case \"1\":",
+        "explanation": "Verifica se a tecla pressionada é '1'."
+    },
+    {
+        "code": "        case \"2\":",
+        "explanation": "Verifica se a tecla pressionada é '2'."
+    },
+    {
+        "code": "        case \"3\":",
+        "explanation": "Verifica se a tecla pressionada é '3'."
+    },
+    {
+        "code": "        case \"4\":",
+        "explanation": "Verifica se a tecla pressionada é '4'."
+    },
+    {
+        "code": "        case \"5\":",
+        "explanation": "Verifica se a tecla pressionada é '5'."
+    },
+    {
+        "code": "        case \"6\":",
+        "explanation": "Verifica se a tecla pressionada é '6'."
+    },
+    {
+        "code": "        case \"7\":",
+        "explanation": "Verifica se a tecla pressionada é '7'."
+    },
+    {
+        "code": "        case \"8\":",
+        "explanation": "Verifica se a tecla pressionada é '8'."
+    },
+    {
+        "code": "        case \"9\":",
+        "explanation": "Verifica se a tecla pressionada é '9'."
+    },
+    {
+        "code": "            displaynum(key);",
+        "explanation": "Se a tecla pressionada é um número, chama a função 'displaynum' para adicionar o número ao campo de entrada."
+    },
+    {
+        "code": "        case \"+\":",
+        "explanation": "Verifica se a tecla pressionada é o operador '+' (adição)."
+    },
+    {
+        "code": "        case \"-\":",
+        "explanation": "Verifica se a tecla pressionada é o operador '-' (subtração)."
+    },
+    {
+        "code": "        case \"*\":",
+        "explanation": "Verifica se a tecla pressionada é o operador '*' (multiplicação)."
+    },
+    {
+        "code": "        case \"/\":",
+        "explanation": "Verifica se a tecla pressionada é o operador '/' (divisão)."
+    },
+    {
+        "code": "        case \".\":",
+        "explanation": "Verifica se a tecla pressionada é o ponto decimal '.'."
+    },
+    {
+        "code": "            displaynum(key);",
+        "explanation": "Se a tecla pressionada é um operador ou ponto decimal, chama a função 'displaynum' para adicioná-lo ao campo de entrada."
+    },
+    {
+        "code": "        case \"Enter\":",
+        "explanation": "Verifica se a tecla pressionada é 'Enter'."
+    },
+    {
+        "code": "            calculate();",
+        "explanation": "Se a tecla pressionada é 'Enter', chama a função 'calculate' para avaliar a expressão e mostrar o resultado."
+    },
+    {
+        "code": "        case \"Delete\":",
+        "explanation": "Verifica se a tecla pressionada é 'Delete'."
+    },
+    {
+        "code": "        case \"Backspace\":",
+        "explanation": "Verifica se a tecla pressionada é 'Backspace'."
+    },
+    {
+        "code": "            deleteLastChar();",
+        "explanation": "Se a tecla pressionada é 'Delete' ou 'Backspace', chama a função 'deleteLastChar' para remover o último caractere do campo de entrada."
+    },
+    {
+        "code": "        case \"%\":",
+        "explanation": "Verifica se a tecla pressionada é o operador '%' (percentagem)."
+    },
+    {
+        "code": "            calculatePercentage();",
+        "explanation": "Se a tecla pressionada é '%', chama a função 'calculatePercentage' para calcular a porcentagem do valor atual no campo de entrada."
+    },
+    {
+        "code": "    }",
+        "explanation": "Fecha o bloco 'switch'."
     },
     {
         "code": "});",
-        "explanation": "Fecha a iteração sobre os itens de tarefa."
+        "explanation": "Fecha o bloco de código para o evento de teclado."
     },
     {
-        "code": "localStorage.setItem('tasks', JSON.stringify(tasks));",
-        "explanation": "Salva o array de tarefas no LocalStorage como uma string JSON."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a definição da função saveTasks."
-    },
-    {
-        "code": "// Função para adicionar tarefa ao DOM",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por adicionar uma nova tarefa à interface do usuário."
-    },
-    {
-        "code": "function addTaskToDOM(taskText) {",
-        "explanation": "Declara a função addTaskToDOM que receberá o texto de uma nova tarefa como argumento."
-    },
-    {
-        "code": "const taskItem = document.createElement('li');",
-        "explanation": "Cria um novo elemento de lista (li) que representará a tarefa a ser adicionada."
-    },
-    {
-        "code": "const checkbox = document.createElement('input');",
-        "explanation": "Cria um novo elemento de entrada (input) que servirá como uma caixa de seleção (checkbox) para a tarefa."
-    },
-    {
-        "code": "checkbox.type = 'checkbox';",
-        "explanation": "Define o tipo do elemento de entrada como 'checkbox', permitindo que os usuários marquem a tarefa como concluída."
-    },
-    {
-        "code": "const taskSpan = document.createElement('span');",
-        "explanation": "Cria um novo elemento de span que conterá o texto da tarefa."
-    },
-    {
-        "code": "taskSpan.textContent = taskText;",
-        "explanation": "Define o texto do elemento de span como o texto da tarefa que foi passada como argumento."
-    },
-    {
-        "code": "taskItem.appendChild(checkbox);",
-        "explanation": "Adiciona a caixa de seleção (checkbox) ao item de tarefa (li)."
-    },
-    {
-        "code": "taskItem.appendChild(taskSpan);",
-        "explanation": "Adiciona o elemento de span que contém o texto da tarefa ao item de tarefa (li)."
-    },
-    {
-        "code": "taskList.appendChild(taskItem);",
-        "explanation": "Adiciona o item de tarefa (li) à lista de tarefas (ul ou ol)."
-    },
-    {
-        "code": "saveTasks();",
-        "explanation": "Chama a função saveTasks para garantir que as tarefas sejam salvas no LocalStorage sempre que uma nova tarefa for adicionada."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a definição da função addTaskToDOM."
-    },
-    {
-        "code": "// Função para adicionar tarefa",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por adicionar uma nova tarefa quando o botão de adicionar for clicado."
-    },
-    {
-        "code": "function addTask() {",
-        "explanation": "Declara a função addTask que será responsável por adicionar uma nova tarefa à lista."
-    },
-    {
-        "code": "const taskText = taskInput.value.trim();",
-        "explanation": "Obtém o texto da entrada de tarefa, removendo espaços em branco extras, e armazena na variável taskText."
-    },
-    {
-        "code": "if (taskText !== '') {",
-        "explanation": "Verifica se o texto da tarefa não está vazio antes de prosseguir."
-    },
-    {
-        "code": "addTaskToDOM(taskText);",
-        "explanation": "Chama a função addTaskToDOM para adicionar a nova tarefa à interface do usuário."
-    },
-    {
-        "code": "taskInput.value = '';",
-        "explanation": "Limpa o campo de entrada de tarefa após a tarefa ser adicionada."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha o bloco condicional que verifica se o texto da tarefa não está vazio."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a definição da função addTask."
-    },
-    {
-        "code": "// Função para carregar o estado do temporizador do LocalStorage",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por carregar o estado do temporizador do LocalStorage."
-    },
-    {
-        "code": "function loadTimerState() {",
-        "explanation": "Declara a função loadTimerState que irá recuperar e aplicar o estado do temporizador salvo."
-    },
-    {
-        "code": "const savedTimeLeft = localStorage.getItem('timeLeft');",
-        "explanation": "Recupera o tempo restante do LocalStorage e armazena na variável savedTimeLeft."
-    },
-    {
-        "code": "const savedTimerRunning = localStorage.getItem('timerRunning');",
-        "explanation": "Recupera o estado de execução do temporizador do LocalStorage e armazena na variável savedTimerRunning."
-    },
-    {
-        "code": "if (savedTimeLeft !== null) {",
-        "explanation": "Verifica se savedTimeLeft não é nulo, ou seja, se há um tempo restante salvo."
-    },
-    {
-        "code": "timeLeft = parseInt(savedTimeLeft, 10);",
-        "explanation": "Converte savedTimeLeft para um número inteiro e atualiza a variável timeLeft."
-    },
-    {
-        "code": "updateTimerDisplay();",
-        "explanation": "Chama a função updateTimerDisplay para atualizar a exibição do temporizador com o novo tempo restante."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha o bloco condicional que verifica se savedTimeLeft não é nulo."
-    },
-    {
-        "code": "if (savedTimerRunning === 'true') {",
-        "explanation": "Verifica se o temporizador estava em execução anteriormente, baseado no valor salvo no LocalStorage."
-    },
-    {
-        "code": "startTimer();",
-        "explanation": "Chama a função startTimer para reiniciar o temporizador caso ele estivesse em execução."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha o bloco condicional que verifica se o temporizador estava em execução."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a definição da função loadTimerState."
-    },
-    {
-        "code": "// Função para salvar o estado do temporizador no LocalStorage",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por salvar o estado do temporizador no LocalStorage."
-    },
-    {
-        "code": "function saveTimerState() {",
-        "explanation": "Declara a função saveTimerState que irá salvar o estado atual do temporizador."
-    },
-    {
-        "code": "localStorage.setItem('timeLeft', timeLeft);",
-        "explanation": "Salva o valor atual de timeLeft no LocalStorage como 'timeLeft'."
-    },
-    {
-        "code": "localStorage.setItem('timerRunning', timerRunning);",
-        "explanation": "Salva o estado atual de timerRunning no LocalStorage, indicando se o temporizador está em execução ou não."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a definição da função saveTimerState."
-    },
-    {
-        "code": "// Função para formatar tempo em minutos e segundos",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por formatar o tempo em uma string legível."
-    },
-    {
-        "code": "function formatTime(seconds) {",
-        "explanation": "Declara a função formatTime que recebe um valor em segundos e retorna uma string formatada."
-    },
-    {
-        "code": "const minutes = Math.floor(seconds / 60);",
-        "explanation": "Calcula o número de minutos inteiros a partir dos segundos fornecidos, usando Math.floor para arredondar para baixo."
-    },
-    {
-        "code": "const remainingSeconds = seconds % 60;",
-        "explanation": "Calcula os segundos restantes após calcular os minutos, usando o operador módulo."
-    },
-    {
-        "code": "return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;",
-        "explanation": "Retorna uma string formatada no estilo 'MM:SS', onde os minutos e segundos são sempre apresentados com dois dígitos."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a definição da função formatTime."
-    },
-    {
-        "code": "// Função para atualizar o display do temporizador",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por atualizar a exibição do temporizador."
-    },
-    {
-        "code": "function updateTimerDisplay() {",
-        "explanation": "Declara a função updateTimerDisplay que atualiza o conteúdo do elemento que exibe o tempo restante."
-    },
-    {
-        "code": "timerDisplay.textContent = formatTime(timeLeft);",
-        "explanation": "Define o texto do elemento timerDisplay como o tempo restante formatado, chamando a função formatTime."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a definição da função updateTimerDisplay."
-    },
-    {
-        "code": "// Função para iniciar o temporizador",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por iniciar o temporizador."
-    },
-    {
-        "code": "function startTimer() {",
-        "explanation": "Declara a função startTimer que inicia o temporizador."
-    },
-    {
-        "code": "if (!timerRunning) {",
-        "explanation": "Verifica se o temporizador não está em execução antes de iniciar um novo ciclo."
-    },
-    {
-        "code": "timerRunning = true;",
-        "explanation": "Define timerRunning como true, indicando que o temporizador está agora em execução."
-    },
-    {
-        "code": "timerInterval = setInterval(() => {",
-        "explanation": "Inicia um intervalo que executa a função fornecida a cada 1000 milissegundos (1 segundo)."
-    },
-    {
-        "code": "timeLeft--;",
-        "explanation": "Decrementa o valor de timeLeft em 1 segundo a cada intervalo."
-    },
-    {
-        "code": "updateTimerDisplay();",
-        "explanation": "Chama a função updateTimerDisplay para atualizar a exibição do temporizador após a decretação do tempo."
-    },
-    {
-        "code": "updateProgressBar();",
-        "explanation": "Chama a função updateProgressBar para atualizar a barra de progresso do temporizador com base no tempo restante."
-    },
-    {
-        "code": "saveTimerState();",
-        "explanation": "Chama a função saveTimerState para salvar o estado atual do temporizador no LocalStorage."
-    },
-    {
-        "code": "if (timeLeft <= 0) {",
-        "explanation": "Verifica se o tempo restante é menor ou igual a zero, indicando que o temporizador expirou."
-    },
-    {
-        "code": "clearInterval(timerInterval);",
-        "explanation": "Para o intervalo, impedindo que a função continue a ser chamada após o tempo expirar."
-    },
-    {
-        "code": "timerRunning = false;",
-        "explanation": "Define timerRunning como false, indicando que o temporizador não está mais em execução."
-    },
-    {
-        "code": "sessionCount++;",
-        "explanation": "Incrementa o contador de sessões a cada vez que o temporizador expira."
-    },
-    {
-        "code": "if (sessionCount % 4 === 0) {",
-        "explanation": "Verifica se o número de sessões completas é um múltiplo de 4, indicando que uma pausa longa deve ser feita."
-    },
-    {
-        "code": "timeLeft = 1800; // Pausa longa (30 minutos)",
-        "explanation": "Define o tempo restante como 1800 segundos (30 minutos) para a pausa longa."
-    },
-    {
-        "code": "} else {",
-        "explanation": "Se não for uma pausa longa, então uma pausa curta será definida."
-    },
-    {
-        "code": "timeLeft = 300; // Pausa curta (5 minutos)",
-        "explanation": "Define o tempo restante como 300 segundos (5 minutos) para a pausa curta."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha o bloco condicional que verifica se é uma pausa longa ou curta."
-    },
-    {
-        "code": "alert('Tempo esgotado! Iniciando próxima sessão.');",
-        "explanation": "Exibe um alerta informando ao usuário que o tempo esgotou e que uma nova sessão começará."
-    },
-    {
-        "code": "updateTimerDisplay();",
-        "explanation": "Atualiza a exibição do temporizador para refletir o novo tempo restante após a expiração."
-    },
-    {
-        "code": "saveTimerState();",
-        "explanation": "Chama a função saveTimerState para salvar o estado atualizado do temporizador no LocalStorage."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha o bloco condicional que verifica se o tempo restante é menor ou igual a zero."
-    },
-    {
-        "code": "}, 1000);",
-        "explanation": "Fecha a chamada de setInterval, que chama a função a cada segundo."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a definição da função startTimer."
-    },
-    {
-        "code": "// Função para pausar o temporizador",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por pausar o temporizador."
-    },
-    {
-        "code": "function pauseTimer() {",
-        "explanation": "Declara a função pauseTimer que é responsável por interromper o temporizador."
-    },
-    {
-        "code": "if (timerRunning) {",
-        "explanation": "Verifica se o temporizador está atualmente em execução antes de tentar pausá-lo."
-    },
-    {
-        "code": "clearInterval(timerInterval);",
-        "explanation": "Para o intervalo em execução, evitando que a função continue a ser chamada."
-    },
-    {
-        "code": "timerRunning = false;",
-        "explanation": "Define timerRunning como false, indicando que o temporizador foi pausado."
-    },
-    {
-        "code": "saveTimerState();",
-        "explanation": "Chama a função saveTimerState para armazenar o estado atualizado do temporizador no LocalStorage."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha o bloco condicional que verifica se o temporizador está em execução."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a definição da função pauseTimer."
-    },
-    {
-        "code": "// Função para resetar o temporizador",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por reiniciar o temporizador."
-    },
-    {
-        "code": "function resetTimer() {",
-        "explanation": "Declara a função resetTimer que redefine o temporizador para seu valor inicial."
-    },
-    {
-        "code": "clearInterval(timerInterval);",
-        "explanation": "Para qualquer intervalo ativo, interrompendo a contagem do temporizador."
-    },
-    {
-        "code": "timerRunning = false;",
-        "explanation": "Define timerRunning como false, indicando que o temporizador não está em execução após o reset."
-    },
-    {
-        "code": "timeLeft = 1500;",
-        "explanation": "Redefine o tempo restante para 1500 segundos (25 minutos)."
-    },
-    {
-        "code": "updateTimerDisplay();",
-        "explanation": "Chama a função updateTimerDisplay para atualizar a exibição do temporizador com o tempo redefinido."
-    },
-    {
-        "code": "updateProgressBar();",
-        "explanation": "Chama a função updateProgressBar para redefinir a barra de progresso ao tempo inicial."
-    },
-    {
-        "code": "saveTimerState();",
-        "explanation": "Chama a função saveTimerState para salvar o estado do temporizador redefinido no LocalStorage."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a definição da função resetTimer."
-    },
-    {
-        "code": "// Função para atualizar a barra de progresso",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por atualizar a barra de progresso com base no tempo restante."
-    },
-    {
-        "code": "function updateProgressBar() {",
-        "explanation": "Declara a função updateProgressBar que atualiza a barra de progresso do temporizador."
-    },
-    {
-        "code": "const progressBar = document.querySelector('.progress-bar');",
-        "explanation": "Seleciona o elemento HTML que representa a barra de progresso."
-    },
-    {
-        "code": "const progress = ((1500 - timeLeft) / 1500) * 100;",
-        "explanation": "Calcula o percentual de progresso com base no tempo decorrido em relação ao tempo total de 1500 segundos."
-    },
-    {
-        "code": "progressBar.style.width = `${progress}%`;",
-        "explanation": "Define a largura da barra de progresso como a porcentagem calculada, fazendo com que ela se preencha conforme o tempo passa."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a definição da função updateProgressBar."
-    },
-    {
-        "code": "// Adicionando event listeners aos botões",
-        "explanation": "Este é um comentário que indica que os próximos trechos de código vão adicionar ouvintes de eventos aos botões da interface."
-    },
-    {
-        "code": "addTaskBtn.addEventListener('click', addTask);",
-        "explanation": "Adiciona um ouvinte de evento ao botão de adicionar tarefa, chamando a função addTask quando o botão é clicado."
-    },
-    {
-        "code": "startBtn.addEventListener('click', startTimer);",
-        "explanation": "Adiciona um ouvinte de evento ao botão de iniciar o temporizador, chamando a função startTimer quando o botão é clicado."
-    },
-    {
-        "code": "pauseBtn.addEventListener('click', pauseTimer);",
-        "explanation": "Adiciona um ouvinte de evento ao botão de pausar o temporizador, chamando a função pauseTimer quando o botão é clicado."
-    },
-    {
-        "code": "resetBtn.addEventListener('click', resetTimer);",
-        "explanation": "Adiciona um ouvinte de evento ao botão de resetar o temporizador, chamando a função resetTimer quando o botão é clicado."
-    },
-    {
-        "code": "// Carregando tarefas e estado do temporizador ao carregar a página",
-        "explanation": "Este é um comentário que indica que a próxima linha de código vai carregar tarefas e o estado do temporizador quando a página for carregada."
-    },
-    {
-        "code": "window.addEventListener('load', () => {",
-        "explanation": "Adiciona um ouvinte de evento para o carregamento da página, executando a função quando a página é carregada."
-    },
-    {
-        "code": "loadTasks();",
-        "explanation": "Chama a função loadTasks para carregar as tarefas salvas no LocalStorage ao carregar a página."
-    },
-    {
-        "code": "loadTimerState();",
-        "explanation": "Chama a função loadTimerState para carregar o estado do temporizador salvo no LocalStorage ao carregar a página."
-    },
-    {
-        "code": "});",
-        "explanation": "Fecha a função anônima que é chamada quando a página é carregada."
-    },
-    {
-        "code": "}",
-        "explanation": "Fecha a definição do bloco de código principal."
+        "code": "window.onload = loadHistory;",
+        "explanation": "Define que a função 'loadHistory' deve ser chamada quando a página é carregada, para exibir o histórico de cálculos salvo."
     }
 ]

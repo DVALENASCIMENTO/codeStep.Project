@@ -1,530 +1,470 @@
 [
     {
-        "code": "// Selecionando elementos do DOM",
-        "explanation": "Este é um comentário que indica que as próximas linhas de código são responsáveis por selecionar elementos do Document Object Model (DOM), que representa a estrutura do documento HTML."
-    },
-    {
-        "code": "const taskInput = document.getElementById('task-input');",
-        "explanation": "Seleciona o elemento de entrada de texto (input) onde o usuário pode digitar novas tarefas, armazenando a referência na variável taskInput."
-    },
-    {
-        "code": "const addTaskBtn = document.getElementById('add-task-btn');",
-        "explanation": "Seleciona o botão para adicionar novas tarefas, armazenando a referência na variável addTaskBtn."
-    },
-    {
-        "code": "const taskList = document.getElementById('task-list');",
-        "explanation": "Seleciona o elemento que contém a lista de tarefas (ul ou ol), armazenando a referência na variável taskList."
-    },
-    {
-        "code": "const timerDisplay = document.getElementById('timer');",
-        "explanation": "Seleciona o elemento onde o tempo restante do temporizador será exibido, armazenando a referência na variável timerDisplay."
-    },
-    {
-        "code": "const timerCircle = document.getElementById('timer-circle');",
-        "explanation": "Seleciona o elemento que representa a forma do temporizador, armazenando a referência na variável timerCircle."
+        "code": "const gameContainer = document.querySelector('.game-container');",
+        "explanation": "Seleciona o elemento com a classe 'game-container' do DOM e o armazena na variável 'gameContainer'. Isso permite manipular o container do jogo em outras partes do código."
     },
     {
         "code": "const startBtn = document.getElementById('start-btn');",
-        "explanation": "Seleciona o botão para iniciar o temporizador, armazenando a referência na variável startBtn."
+        "explanation": "Seleciona o elemento com o id 'start-btn' do DOM e o armazena na variável 'startBtn'. Isso permite associar a lógica de início do jogo ao botão de início."
     },
     {
-        "code": "const pauseBtn = document.getElementById('pause-btn');",
-        "explanation": "Seleciona o botão para pausar o temporizador, armazenando a referência na variável pauseBtn."
+        "code": "const stopBtn = document.getElementById('stop-btn');",
+        "explanation": "Seleciona o elemento com o id 'stop-btn' do DOM e o armazena na variável 'stopBtn'. Isso permite associar a lógica de parada do jogo ao botão de parar."
     },
     {
-        "code": "const resetBtn = document.getElementById('reset-btn');",
-        "explanation": "Seleciona o botão para resetar o temporizador, armazenando a referência na variável resetBtn."
+        "code": "const levelEl = document.getElementById('level');",
+        "explanation": "Seleciona o elemento com o id 'level' do DOM e o armazena na variável 'levelEl'. Este elemento é usado para exibir o nível atual do jogo."
     },
     {
-        "code": "// Variáveis do temporizador",
-        "explanation": "Este é um comentário que indica que as próximas linhas de código são responsáveis por declarar variáveis relacionadas ao funcionamento do temporizador."
+        "code": "const questionEl = document.getElementById('question');",
+        "explanation": "Seleciona o elemento com o id 'question' do DOM e o armazena na variável 'questionEl'. Este elemento é usado para exibir a pergunta atual."
     },
     {
-        "code": "let timerInterval;",
-        "explanation": "Declara uma variável timerInterval que será usada para armazenar a referência ao intervalo de tempo (setInterval) para o temporizador."
+        "code": "const answersEl = document.getElementById('answers');",
+        "explanation": "Seleciona o elemento com o id 'answers' do DOM e o armazena na variável 'answersEl'. Este elemento é usado para exibir as opções de resposta."
     },
     {
-        "code": "let timerRunning = false;",
-        "explanation": "Declara uma variável booleana timerRunning que indica se o temporizador está atualmente em execução."
+        "code": "const timerEl = document.getElementById('timer');",
+        "explanation": "Seleciona o elemento com o id 'timer' do DOM e o armazena na variável 'timerEl'. Este elemento é usado para exibir o temporizador do jogo."
     },
     {
-        "code": "let timeLeft = 1500;",
-        "explanation": "Declara uma variável timeLeft e inicializa com 1500 segundos (25 minutos), que é o tempo padrão de uma sessão de trabalho no método Pomodoro."
+        "code": "const resultEl = document.getElementById('result');",
+        "explanation": "Seleciona o elemento com o id 'result' do DOM e o armazena na variável 'resultEl'. Este elemento é usado para exibir o resultado do nível ou do jogo."
     },
     {
-        "code": "let sessionCount = 0;",
-        "explanation": "Declara uma variável sessionCount que conta quantas sessões de trabalho foram completadas, começando em zero."
+        "code": "const operationSelector = document.getElementById('operation');",
+        "explanation": "Seleciona o elemento com o id 'operation' do DOM e o armazena na variável 'operationSelector'. Este elemento é usado para selecionar o tipo de operação matemática."
     },
     {
-        "code": "// Função para carregar tarefas do LocalStorage",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por carregar tarefas armazenadas no LocalStorage."
+        "code": "let currentLevel = 1;",
+        "explanation": "Inicializa a variável 'currentLevel' com o valor 1, indicando que o jogo começa no nível 1."
     },
     {
-        "code": "function loadTasks() {",
-        "explanation": "Declara a função loadTasks que será responsável por carregar as tarefas do LocalStorage."
+        "code": "let currentQuestion = 0;",
+        "explanation": "Inicializa a variável 'currentQuestion' com o valor 0, que será usado para rastrear a pergunta atual dentro de um nível."
     },
     {
-        "code": "const tasks = JSON.parse(localStorage.getItem('tasks')) || [];",
-        "explanation": "Tenta recuperar a lista de tarefas do LocalStorage e a converte de volta de uma string JSON para um array. Se não houver tarefas, inicializa um array vazio."
+        "code": "let correctAnswers = 0;",
+        "explanation": "Inicializa a variável 'correctAnswers' com o valor 0, que será usada para contar o número de respostas corretas no nível atual."
     },
     {
-        "code": "tasks.forEach(task => addTaskToDOM(task));",
-        "explanation": "Itera sobre cada tarefa carregada e chama a função addTaskToDOM para adicionar cada tarefa à interface do usuário."
+        "code": "let totalCorrectAnswers = 0;",
+        "explanation": "Inicializa a variável 'totalCorrectAnswers' com o valor 0, que será usada para contar o número total de respostas corretas em todos os níveis."
     },
     {
-        "code": "}",
-        "explanation": "Fecha a definição da função loadTasks."
+        "code": "let totalQuestionsAsked = 0;",
+        "explanation": "Inicializa a variável 'totalQuestionsAsked' com o valor 0, que será usada para contar o número total de perguntas feitas no jogo."
     },
     {
-        "code": "// Função para salvar tarefas no LocalStorage",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por salvar as tarefas atuais no LocalStorage."
+        "code": "let timer;",
+        "explanation": "Declara uma variável 'timer' que será usada para armazenar o identificador do temporizador do jogo."
     },
     {
-        "code": "function saveTasks() {",
-        "explanation": "Declara a função saveTasks que será responsável por salvar as tarefas no LocalStorage."
+        "code": "let gameInProgress = false;",
+        "explanation": "Inicializa a variável 'gameInProgress' com o valor false, indicando que o jogo não está iniciado."
     },
     {
-        "code": "const tasks = [];",
-        "explanation": "Declara um array vazio chamado tasks que será usado para armazenar as tarefas que serão salvas."
+        "code": "let usedQuestions = new Set();",
+        "explanation": "Cria um novo conjunto 'usedQuestions' para armazenar as perguntas já utilizadas, garantindo que não sejam repetidas."
     },
     {
-        "code": "taskList.querySelectorAll('li').forEach(taskItem => {",
-        "explanation": "Seleciona todos os itens de tarefa (li) na lista de tarefas e itera sobre cada um deles."
+        "code": "const totalLevels = 10;",
+        "explanation": "Define a constante 'totalLevels' com o valor 10, que representa o número total de níveis no jogo."
     },
     {
-        "code": "tasks.push(taskItem.textContent.trim());",
-        "explanation": "Adiciona o texto de cada item de tarefa ao array tasks, removendo espaços em branco extras."
+        "code": "const questionsPerLevel = 10;",
+        "explanation": "Define a constante 'questionsPerLevel' com o valor 10, que representa o número de perguntas em cada nível."
     },
     {
-        "code": "});",
-        "explanation": "Fecha a iteração sobre os itens de tarefa."
+        "code": "const tickSound = new Audio('sound/tictac1.mp3');",
+        "explanation": "Cria um objeto de áudio 'tickSound' que carrega o som de tic-tac para ser tocado durante o jogo."
     },
     {
-        "code": "localStorage.setItem('tasks', JSON.stringify(tasks));",
-        "explanation": "Salva o array de tarefas no LocalStorage como uma string JSON."
+        "code": "const finalTickSound = new Audio('sound/tictac2.mp3');",
+        "explanation": "Cria um objeto de áudio 'finalTickSound' que carrega o som final de tic-tac para ser tocado quando o tempo está acabando."
     },
     {
-        "code": "}",
-        "explanation": "Fecha a definição da função saveTasks."
+        "code": "const correctSound = new Audio('sound/correct.mp3');",
+        "explanation": "Cria um objeto de áudio 'correctSound' que carrega o som para ser tocado quando a resposta é correta."
     },
     {
-        "code": "// Função para adicionar tarefa ao DOM",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por adicionar uma nova tarefa à interface do usuário."
+        "code": "const incorrectSound = new Audio('sound/incorrect.mp3');",
+        "explanation": "Cria um objeto de áudio 'incorrectSound' que carrega o som para ser tocado quando a resposta é incorreta."
     },
     {
-        "code": "function addTaskToDOM(taskText) {",
-        "explanation": "Declara a função addTaskToDOM que receberá o texto de uma nova tarefa como argumento."
+        "code": "startBtn.addEventListener('click', startGame);",
+        "explanation": "Adiciona um ouvinte de evento ao botão 'startBtn' para chamar a função 'startGame' quando o botão é clicado, iniciando o jogo."
     },
     {
-        "code": "const taskItem = document.createElement('li');",
-        "explanation": "Cria um novo elemento de lista (li) que representará a tarefa a ser adicionada."
+        "code": "stopBtn.addEventListener('click', endGame);",
+        "explanation": "Adiciona um ouvinte de evento ao botão 'stopBtn' para chamar a função 'endGame' quando o botão é clicado, terminando o jogo."
     },
     {
-        "code": "const checkbox = document.createElement('input');",
-        "explanation": "Cria um novo elemento de entrada (input) que servirá como uma caixa de seleção (checkbox) para a tarefa."
+        "code": "operationSelector.addEventListener('change', handleOperationChange);",
+        "explanation": "Adiciona um ouvinte de evento ao seletor 'operationSelector' para chamar a função 'handleOperationChange' quando a operação matemática é alterada."
     },
     {
-        "code": "checkbox.type = 'checkbox';",
-        "explanation": "Define o tipo do elemento de entrada como 'checkbox', permitindo que os usuários marquem a tarefa como concluída."
+        "code": "function startGame() {",
+        "explanation": "Define a função 'startGame' que inicia o jogo."
     },
     {
-        "code": "const taskSpan = document.createElement('span');",
-        "explanation": "Cria um novo elemento de span que conterá o texto da tarefa."
+        "code": "    startBtn.classList.add('hidden');",
+        "explanation": "Adiciona a classe 'hidden' ao botão de iniciar, ocultando-o quando o jogo começa."
     },
     {
-        "code": "taskSpan.textContent = taskText;",
-        "explanation": "Define o texto do elemento de span como o texto da tarefa que foi passada como argumento."
+        "code": "    stopBtn.classList.remove('hidden');",
+        "explanation": "Remove a classe 'hidden' do botão de parar, mostrando-o quando o jogo começa."
     },
     {
-        "code": "taskItem.appendChild(checkbox);",
-        "explanation": "Adiciona a caixa de seleção (checkbox) ao item de tarefa (li)."
+        "code": "    resultEl.innerText = '';",
+        "explanation": "Limpa o texto exibido no elemento 'resultEl', removendo qualquer resultado anterior."
     },
     {
-        "code": "taskItem.appendChild(taskSpan);",
-        "explanation": "Adiciona o elemento de span que contém o texto da tarefa ao item de tarefa (li)."
+        "code": "    currentLevel = 1;",
+        "explanation": "Define o nível atual como 1, reiniciando o jogo para o primeiro nível."
     },
     {
-        "code": "taskList.appendChild(taskItem);",
-        "explanation": "Adiciona o item de tarefa (li) à lista de tarefas (ul ou ol)."
+        "code": "    correctAnswers = 0;",
+        "explanation": "Reseta o contador de respostas corretas para 0."
     },
     {
-        "code": "saveTasks();",
-        "explanation": "Chama a função saveTasks para garantir que as tarefas sejam salvas no LocalStorage sempre que uma nova tarefa for adicionada."
+        "code": "    totalCorrectAnswers = 0;",
+        "explanation": "Reseta o contador total de respostas corretas para 0."
     },
     {
-        "code": "}",
-        "explanation": "Fecha a definição da função addTaskToDOM."
+        "code": "    totalQuestionsAsked = 0;",
+        "explanation": "Reseta o contador total de perguntas feitas para 0."
     },
     {
-        "code": "// Função para adicionar tarefa",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por adicionar uma nova tarefa quando o botão de adicionar for clicado."
+        "code": "    usedQuestions.clear();",
+        "explanation": "Limpa o conjunto de perguntas usadas, garantindo que novas perguntas possam ser usadas."
     },
     {
-        "code": "function addTask() {",
-        "explanation": "Declara a função addTask que será responsável por adicionar uma nova tarefa à lista."
+        "code": "    gameInProgress = true;",
+        "explanation": "Define o estado do jogo como iniciado."
     },
     {
-        "code": "const taskText = taskInput.value.trim();",
-        "explanation": "Obtém o texto da entrada de tarefa, removendo espaços em branco extras, e armazena na variável taskText."
-    },
-    {
-        "code": "if (taskText !== '') {",
-        "explanation": "Verifica se o texto da tarefa não está vazio antes de prosseguir."
-    },
-    {
-        "code": "addTaskToDOM(taskText);",
-        "explanation": "Chama a função addTaskToDOM para adicionar a nova tarefa à interface do usuário."
-    },
-    {
-        "code": "taskInput.value = '';",
-        "explanation": "Limpa o campo de entrada de tarefa após a tarefa ser adicionada."
+        "code": "    startLevel();",
+        "explanation": "Chama a função 'startLevel' para iniciar o primeiro nível do jogo."
     },
     {
         "code": "}",
-        "explanation": "Fecha o bloco condicional que verifica se o texto da tarefa não está vazio."
+        "explanation": "Fecha a função 'startGame'."
+    },
+    {
+        "code": "function handleOperationChange() {",
+        "explanation": "Define a função 'handleOperationChange' que lida com a mudança de operação selecionada."
+    },
+    {
+        "code": "    if (gameInProgress) {",
+        "explanation": "Verifica se o jogo está em andamento."
+    },
+    {
+        "code": "        endGame();",
+        "explanation": "Chama a função 'endGame' para terminar o jogo se uma operação for selecionada enquanto o jogo está em andamento."
+    },
+    {
+        "code": "    }",
+        "explanation": "Fecha a verificação do estado do jogo."
+    },
+    {
+        "code": "    startGame();",
+        "explanation": "Chama a função 'startGame' para reiniciar o jogo com a nova operação selecionada."
     },
     {
         "code": "}",
-        "explanation": "Fecha a definição da função addTask."
+        "explanation": "Fecha a função 'handleOperationChange'."
     },
     {
-        "code": "// Função para carregar o estado do temporizador do LocalStorage",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por carregar o estado do temporizador do LocalStorage."
+        "code": "function endGame() {",
+        "explanation": "Define a função 'endGame' que encerra o jogo."
     },
     {
-        "code": "function loadTimerState() {",
-        "explanation": "Declara a função loadTimerState que irá recuperar e aplicar o estado do temporizador salvo."
+        "code": "    gameInProgress = false;",
+        "explanation": "Define o estado do jogo como não iniciado."
     },
     {
-        "code": "const savedTimeLeft = localStorage.getItem('timeLeft');",
-        "explanation": "Recupera o tempo restante do LocalStorage e armazena na variável savedTimeLeft."
+        "code": "    startBtn.classList.remove('hidden');",
+        "explanation": "Remove a classe 'hidden' do botão de iniciar, mostrando-o novamente após o término do jogo."
     },
     {
-        "code": "const savedTimerRunning = localStorage.getItem('timerRunning');",
-        "explanation": "Recupera o estado de execução do temporizador do LocalStorage e armazena na variável savedTimerRunning."
-    },
-    {
-        "code": "if (savedTimeLeft !== null) {",
-        "explanation": "Verifica se savedTimeLeft não é nulo, ou seja, se há um tempo restante salvo."
-    },
-    {
-        "code": "timeLeft = parseInt(savedTimeLeft, 10);",
-        "explanation": "Converte savedTimeLeft para um número inteiro e atualiza a variável timeLeft."
-    },
-    {
-        "code": "updateTimerDisplay();",
-        "explanation": "Chama a função updateTimerDisplay para atualizar a exibição do temporizador com o novo tempo restante."
+        "code": "    stopBtn.classList.add('hidden');",
+        "explanation": "Adiciona a classe 'hidden' ao botão de parar, ocultando-o após o término do jogo."
     },
     {
         "code": "}",
-        "explanation": "Fecha o bloco condicional que verifica se savedTimeLeft não é nulo."
+        "explanation": "Fecha a função 'endGame'."
     },
     {
-        "code": "if (savedTimerRunning === 'true') {",
-        "explanation": "Verifica se o temporizador estava em execução anteriormente, baseado no valor salvo no LocalStorage."
+        "code": "function startLevel() {",
+        "explanation": "Define a função 'startLevel' que inicia um novo nível do jogo."
     },
     {
-        "code": "startTimer();",
-        "explanation": "Chama a função startTimer para reiniciar o temporizador caso ele estivesse em execução."
+        "code": "    currentQuestion = 0;",
+        "explanation": "Reseta o número da pergunta atual para 0 no início do nível."
     },
     {
-        "code": "}",
-        "explanation": "Fecha o bloco condicional que verifica se o temporizador estava em execução."
+        "code": "    showQuestion();",
+        "explanation": "Chama a função 'showQuestion' para exibir a primeira pergunta do nível."
     },
     {
-        "code": "}",
-        "explanation": "Fecha a definição da função loadTimerState."
-    },
-    {
-        "code": "// Função para salvar o estado do temporizador no LocalStorage",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por salvar o estado do temporizador no LocalStorage."
-    },
-    {
-        "code": "function saveTimerState() {",
-        "explanation": "Declara a função saveTimerState que irá salvar o estado atual do temporizador."
-    },
-    {
-        "code": "localStorage.setItem('timeLeft', timeLeft);",
-        "explanation": "Salva o valor atual de timeLeft no LocalStorage como 'timeLeft'."
-    },
-    {
-        "code": "localStorage.setItem('timerRunning', timerRunning);",
-        "explanation": "Salva o estado atual de timerRunning no LocalStorage, indicando se o temporizador está em execução ou não."
+        "code": "    startTimer();",
+        "explanation": "Chama a função 'startTimer' para iniciar o temporizador do nível."
     },
     {
         "code": "}",
-        "explanation": "Fecha a definição da função saveTimerState."
+        "explanation": "Fecha a função 'startLevel'."
     },
     {
-        "code": "// Função para formatar tempo em minutos e segundos",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por formatar o tempo em uma string legível."
+        "code": "function showQuestion() {",
+        "explanation": "Define a função 'showQuestion' que exibe a pergunta atual e suas opções de resposta."
     },
     {
-        "code": "function formatTime(seconds) {",
-        "explanation": "Declara a função formatTime que recebe um valor em segundos e retorna uma string formatada."
+        "code": "    const question = generateQuestion();",
+        "explanation": "Gera uma nova pergunta usando a função 'generateQuestion' e armazena o resultado na variável 'question'."
     },
     {
-        "code": "const minutes = Math.floor(seconds / 60);",
-        "explanation": "Calcula o número de minutos inteiros a partir dos segundos fornecidos, usando Math.floor para arredondar para baixo."
+        "code": "    questionEl.innerText = question.text;",
+        "explanation": "Define o texto do elemento 'questionEl' com a pergunta gerada."
     },
     {
-        "code": "const remainingSeconds = seconds % 60;",
-        "explanation": "Calcula os segundos restantes após calcular os minutos, usando o operador módulo."
+        "code": "    answersEl.innerHTML = '';",
+        "explanation": "Limpa o conteúdo HTML do elemento 'answersEl' para remover opções de resposta anteriores."
     },
     {
-        "code": "return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;",
-        "explanation": "Retorna uma string formatada no estilo 'MM:SS', onde os minutos e segundos são sempre apresentados com dois dígitos."
+        "code": "    question.answers.forEach((answer, index) => {",
+        "explanation": "Percorre cada resposta da pergunta gerada."
     },
     {
-        "code": "}",
-        "explanation": "Fecha a definição da função formatTime."
+        "code": "        const button = document.createElement('button');",
+        "explanation": "Cria um novo elemento de botão para cada resposta."
     },
     {
-        "code": "// Função para atualizar o display do temporizador",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por atualizar a exibição do temporizador."
+        "code": "        button.innerText = answer;",
+        "explanation": "Define o texto do botão com a resposta atual."
     },
     {
-        "code": "function updateTimerDisplay() {",
-        "explanation": "Declara a função updateTimerDisplay que atualiza o conteúdo do elemento que exibe o tempo restante."
+        "code": "        button.addEventListener('click', () => handleAnswer(index));",
+        "explanation": "Adiciona um ouvinte de evento ao botão que chama a função 'handleAnswer' quando o botão é clicado, passando o índice da resposta."
     },
     {
-        "code": "timerDisplay.textContent = formatTime(timeLeft);",
-        "explanation": "Define o texto do elemento timerDisplay como o tempo restante formatado, chamando a função formatTime."
+        "code": "        answersEl.appendChild(button);",
+        "explanation": "Adiciona o botão de resposta ao elemento 'answersEl'."
     },
     {
-        "code": "}",
-        "explanation": "Fecha a definição da função updateTimerDisplay."
-    },
-    {
-        "code": "// Função para iniciar o temporizador",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por iniciar o temporizador."
-    },
-    {
-        "code": "function startTimer() {",
-        "explanation": "Declara a função startTimer que inicia o temporizador."
-    },
-    {
-        "code": "if (!timerRunning) {",
-        "explanation": "Verifica se o temporizador não está em execução antes de iniciar um novo ciclo."
-    },
-    {
-        "code": "timerRunning = true;",
-        "explanation": "Define timerRunning como true, indicando que o temporizador está agora em execução."
-    },
-    {
-        "code": "timerInterval = setInterval(() => {",
-        "explanation": "Inicia um intervalo que executa a função fornecida a cada 1000 milissegundos (1 segundo)."
-    },
-    {
-        "code": "timeLeft--;",
-        "explanation": "Decrementa o valor de timeLeft em 1 segundo a cada intervalo."
-    },
-    {
-        "code": "updateTimerDisplay();",
-        "explanation": "Chama a função updateTimerDisplay para atualizar a exibição do temporizador após a decretação do tempo."
-    },
-    {
-        "code": "updateProgressBar();",
-        "explanation": "Chama a função updateProgressBar para atualizar a barra de progresso do temporizador com base no tempo restante."
-    },
-    {
-        "code": "saveTimerState();",
-        "explanation": "Chama a função saveTimerState para salvar o estado atual do temporizador no LocalStorage."
-    },
-    {
-        "code": "if (timeLeft <= 0) {",
-        "explanation": "Verifica se o tempo restante é menor ou igual a zero, indicando que o temporizador expirou."
-    },
-    {
-        "code": "clearInterval(timerInterval);",
-        "explanation": "Para o intervalo, impedindo que a função continue a ser chamada após o tempo expirar."
-    },
-    {
-        "code": "timerRunning = false;",
-        "explanation": "Define timerRunning como false, indicando que o temporizador não está mais em execução."
-    },
-    {
-        "code": "sessionCount++;",
-        "explanation": "Incrementa o contador de sessões a cada vez que o temporizador expira."
-    },
-    {
-        "code": "if (sessionCount % 4 === 0) {",
-        "explanation": "Verifica se o número de sessões completas é um múltiplo de 4, indicando que uma pausa longa deve ser feita."
-    },
-    {
-        "code": "timeLeft = 1800; // Pausa longa (30 minutos)",
-        "explanation": "Define o tempo restante como 1800 segundos (30 minutos) para a pausa longa."
-    },
-    {
-        "code": "} else {",
-        "explanation": "Se não for uma pausa longa, então uma pausa curta será definida."
-    },
-    {
-        "code": "timeLeft = 300; // Pausa curta (5 minutos)",
-        "explanation": "Define o tempo restante como 300 segundos (5 minutos) para a pausa curta."
+        "code": "    });",
+        "explanation": "Fecha o loop que cria botões para cada resposta."
     },
     {
         "code": "}",
-        "explanation": "Fecha o bloco condicional que verifica se é uma pausa longa ou curta."
+        "explanation": "Fecha a função 'showQuestion'."
     },
     {
-        "code": "alert('Tempo esgotado! Iniciando próxima sessão.');",
-        "explanation": "Exibe um alerta informando ao usuário que o tempo esgotou e que uma nova sessão começará."
+        "code": "function generateQuestion() {",
+        "explanation": "Define a função 'generateQuestion' que gera uma nova pergunta com opções de resposta."
     },
     {
-        "code": "updateTimerDisplay();",
-        "explanation": "Atualiza a exibição do temporizador para refletir o novo tempo restante após a expiração."
+        "code": "    const operation = operationSelector.value;",
+        "explanation": "Obtém o valor da operação selecionada e o armazena na variável 'operation'."
     },
     {
-        "code": "saveTimerState();",
-        "explanation": "Chama a função saveTimerState para salvar o estado atualizado do temporizador no LocalStorage."
+        "code": "    const question = {};",
+        "explanation": "Inicializa um objeto vazio 'question' para armazenar a pergunta gerada."
     },
     {
-        "code": "}",
-        "explanation": "Fecha o bloco condicional que verifica se o tempo restante é menor ou igual a zero."
+        "code": "    question.text = `Qual é ${generateEquation(operation)}?`;",
+        "explanation": "Define o texto da pergunta com base na operação selecionada e na equação gerada pela função 'generateEquation'."
     },
     {
-        "code": "}, 1000);",
-        "explanation": "Fecha a chamada de setInterval, que chama a função a cada segundo."
+        "code": "    question.answers = generateAnswers();",
+        "explanation": "Gera uma lista de respostas usando a função 'generateAnswers' e armazena na propriedade 'answers' do objeto 'question'."
     },
     {
-        "code": "}",
-        "explanation": "Fecha a definição da função startTimer."
-    },
-    {
-        "code": "// Função para pausar o temporizador",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por pausar o temporizador."
-    },
-    {
-        "code": "function pauseTimer() {",
-        "explanation": "Declara a função pauseTimer que é responsável por interromper o temporizador."
-    },
-    {
-        "code": "if (timerRunning) {",
-        "explanation": "Verifica se o temporizador está atualmente em execução antes de tentar pausá-lo."
-    },
-    {
-        "code": "clearInterval(timerInterval);",
-        "explanation": "Para o intervalo em execução, evitando que a função continue a ser chamada."
-    },
-    {
-        "code": "timerRunning = false;",
-        "explanation": "Define timerRunning como false, indicando que o temporizador foi pausado."
-    },
-    {
-        "code": "saveTimerState();",
-        "explanation": "Chama a função saveTimerState para armazenar o estado atualizado do temporizador no LocalStorage."
+        "code": "    return question;",
+        "explanation": "Retorna o objeto 'question' gerado pela função."
     },
     {
         "code": "}",
-        "explanation": "Fecha o bloco condicional que verifica se o temporizador está em execução."
+        "explanation": "Fecha a função 'generateQuestion'."
+    },
+    {
+        "code": "function generateEquation(operation) {",
+        "explanation": "Define a função 'generateEquation' que gera uma equação matemática com base na operação selecionada."
+    },
+    {
+        "code": "    const num1 = Math.floor(Math.random() * 10) + 1;",
+        "explanation": "Gera um número aleatório entre 1 e 10 e o armazena na variável 'num1'."
+    },
+    {
+        "code": "    const num2 = Math.floor(Math.random() * 10) + 1;",
+        "explanation": "Gera um número aleatório entre 1 e 10 e o armazena na variável 'num2'."
+    },
+    {
+        "code": "    switch (operation) {",
+        "explanation": "Inicia uma estrutura de controle switch para gerar uma equação com base na operação selecionada."
+    },
+    {
+        "code": "        case 'addition':",
+        "explanation": "Caso a operação seja 'addition' (adição)."
+    },
+    {
+        "code": "            return `${num1} + ${num2}`;",
+        "explanation": "Retorna uma string representando a equação de adição."
+    },
+    {
+        "code": "        case 'subtraction':",
+        "explanation": "Caso a operação seja 'subtraction' (subtração)."
+    },
+    {
+        "code": "            return `${num1} - ${num2}`;",
+        "explanation": "Retorna uma string representando a equação de subtração."
+    },
+    {
+        "code": "        case 'multiplication':",
+        "explanation": "Caso a operação seja 'multiplication' (multiplicação)."
+    },
+    {
+        "code": "            return `${num1} * ${num2}`;",
+        "explanation": "Retorna uma string representando a equação de multiplicação."
+    },
+    {
+        "code": "        case 'division':",
+        "explanation": "Caso a operação seja 'division' (divisão)."
+    },
+    {
+        "code": "            return `${num1} / ${num2}`;",
+        "explanation": "Retorna uma string representando a equação de divisão."
+    },
+    {
+        "code": "    }",
+        "explanation": "Fecha a estrutura de controle switch."
     },
     {
         "code": "}",
-        "explanation": "Fecha a definição da função pauseTimer."
+        "explanation": "Fecha a função 'generateEquation'."
     },
     {
-        "code": "// Função para resetar o temporizador",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por reiniciar o temporizador."
+        "code": "function generateAnswers() {",
+        "explanation": "Define a função 'generateAnswers' que gera uma lista de opções de resposta para a pergunta atual."
     },
     {
-        "code": "function resetTimer() {",
-        "explanation": "Declara a função resetTimer que redefine o temporizador para seu valor inicial."
+        "code": "    const correctAnswer = eval(generateEquation(operation));",
+        "explanation": "Calcula a resposta correta usando a função 'eval' para avaliar a equação gerada."
     },
     {
-        "code": "clearInterval(timerInterval);",
-        "explanation": "Para qualquer intervalo ativo, interrompendo a contagem do temporizador."
+        "code": "    const answers = [correctAnswer];",
+        "explanation": "Cria um array 'answers' contendo a resposta correta como o primeiro item."
     },
     {
-        "code": "timerRunning = false;",
-        "explanation": "Define timerRunning como false, indicando que o temporizador não está em execução após o reset."
+        "code": "    while (answers.length < 4) {",
+        "explanation": "Continua adicionando respostas incorretas até que haja 4 opções no array 'answers'."
     },
     {
-        "code": "timeLeft = 1500;",
-        "explanation": "Redefine o tempo restante para 1500 segundos (25 minutos)."
+        "code": "        const incorrectAnswer = Math.floor(Math.random() * 20) + 1;",
+        "explanation": "Gera uma resposta incorreta aleatória entre 1 e 20."
     },
     {
-        "code": "updateTimerDisplay();",
-        "explanation": "Chama a função updateTimerDisplay para atualizar a exibição do temporizador com o tempo redefinido."
+        "code": "        if (!answers.includes(incorrectAnswer)) {",
+        "explanation": "Verifica se a resposta incorreta já está no array 'answers'."
     },
     {
-        "code": "updateProgressBar();",
-        "explanation": "Chama a função updateProgressBar para redefinir a barra de progresso ao tempo inicial."
+        "code": "            answers.push(incorrectAnswer);",
+        "explanation": "Adiciona a resposta incorreta ao array 'answers' se ainda não estiver presente."
     },
     {
-        "code": "saveTimerState();",
-        "explanation": "Chama a função saveTimerState para salvar o estado do temporizador redefinido no LocalStorage."
+        "code": "        }",
+        "explanation": "Fecha a verificação se a resposta já está incluída."
     },
     {
-        "code": "}",
-        "explanation": "Fecha a definição da função resetTimer."
+        "code": "    }",
+        "explanation": "Fecha o loop para garantir que o array 'answers' tenha 4 opções."
     },
     {
-        "code": "// Função para atualizar a barra de progresso",
-        "explanation": "Este é um comentário que indica que a próxima função é responsável por atualizar a barra de progresso com base no tempo restante."
-    },
-    {
-        "code": "function updateProgressBar() {",
-        "explanation": "Declara a função updateProgressBar que atualiza a barra de progresso do temporizador."
-    },
-    {
-        "code": "const progressBar = document.querySelector('.progress-bar');",
-        "explanation": "Seleciona o elemento HTML que representa a barra de progresso."
-    },
-    {
-        "code": "const progress = ((1500 - timeLeft) / 1500) * 100;",
-        "explanation": "Calcula o percentual de progresso com base no tempo decorrido em relação ao tempo total de 1500 segundos."
-    },
-    {
-        "code": "progressBar.style.width = `${progress}%`;",
-        "explanation": "Define a largura da barra de progresso como a porcentagem calculada, fazendo com que ela se preencha conforme o tempo passa."
+        "code": "    return shuffleArray(answers);",
+        "explanation": "Retorna o array 'answers' embaralhado para criar uma ordem aleatória das respostas."
     },
     {
         "code": "}",
-        "explanation": "Fecha a definição da função updateProgressBar."
+        "explanation": "Fecha a função 'generateAnswers'."
     },
     {
-        "code": "// Adicionando event listeners aos botões",
-        "explanation": "Este é um comentário que indica que os próximos trechos de código vão adicionar ouvintes de eventos aos botões da interface."
+        "code": "function shuffleArray(array) {",
+        "explanation": "Define a função 'shuffleArray' que embaralha um array."
     },
     {
-        "code": "addTaskBtn.addEventListener('click', addTask);",
-        "explanation": "Adiciona um ouvinte de evento ao botão de adicionar tarefa, chamando a função addTask quando o botão é clicado."
+        "code": "    for (let i = array.length - 1; i > 0; i--) {",
+        "explanation": "Percorre o array de trás para frente para embaralhar seus elementos."
     },
     {
-        "code": "startBtn.addEventListener('click', startTimer);",
-        "explanation": "Adiciona um ouvinte de evento ao botão de iniciar o temporizador, chamando a função startTimer quando o botão é clicado."
+        "code": "        const j = Math.floor(Math.random() * (i + 1));",
+        "explanation": "Gera um índice aleatório 'j' para trocar o elemento 'i' com o elemento 'j'."
     },
     {
-        "code": "pauseBtn.addEventListener('click', pauseTimer);",
-        "explanation": "Adiciona um ouvinte de evento ao botão de pausar o temporizador, chamando a função pauseTimer quando o botão é clicado."
+        "code": "        [array[i], array[j]] = [array[j], array[i]];",
+        "explanation": "Troca os elementos nos índices 'i' e 'j' do array."
     },
     {
-        "code": "resetBtn.addEventListener('click', resetTimer);",
-        "explanation": "Adiciona um ouvinte de evento ao botão de resetar o temporizador, chamando a função resetTimer quando o botão é clicado."
+        "code": "    }",
+        "explanation": "Fecha o loop de embaralhamento do array."
     },
     {
-        "code": "// Carregando tarefas e estado do temporizador ao carregar a página",
-        "explanation": "Este é um comentário que indica que a próxima linha de código vai carregar tarefas e o estado do temporizador quando a página for carregada."
-    },
-    {
-        "code": "window.addEventListener('load', () => {",
-        "explanation": "Adiciona um ouvinte de evento para o carregamento da página, executando a função quando a página é carregada."
-    },
-    {
-        "code": "loadTasks();",
-        "explanation": "Chama a função loadTasks para carregar as tarefas salvas no LocalStorage ao carregar a página."
-    },
-    {
-        "code": "loadTimerState();",
-        "explanation": "Chama a função loadTimerState para carregar o estado do temporizador salvo no LocalStorage ao carregar a página."
-    },
-    {
-        "code": "});",
-        "explanation": "Fecha a função anônima que é chamada quando a página é carregada."
+        "code": "    return array;",
+        "explanation": "Retorna o array embaralhado."
     },
     {
         "code": "}",
-        "explanation": "Fecha a definição do bloco de código principal."
+        "explanation": "Fecha a função 'shuffleArray'."
+    },
+    {
+        "code": "function handleAnswer(index) {",
+        "explanation": "Define a função 'handleAnswer' que lida com a seleção de uma resposta pelo usuário."
+    },
+    {
+        "code": "    if (index === correctAnswerIndex) {",
+        "explanation": "Verifica se a resposta selecionada é a correta."
+    },
+    {
+        "code": "        score++;",
+        "explanation": "Incrementa a pontuação do jogador se a resposta estiver correta."
+    },
+    {
+        "code": "        showQuestion();",
+        "explanation": "Exibe a próxima pergunta."
+    },
+    {
+        "code": "    } else {",
+        "explanation": "Caso a resposta selecionada não seja a correta."
+    },
+    {
+        "code": "        endGame();",
+        "explanation": "Encerra o jogo se a resposta estiver errada."
+    },
+    {
+        "code": "    }",
+        "explanation": "Fecha a verificação se a resposta está correta."
+    },
+    {
+        "code": "}",
+        "explanation": "Fecha a função 'handleAnswer'."
+    },
+    {
+        "code": "const startBtn = document.getElementById('start');",
+        "explanation": "Obtém o elemento de botão de iniciar pelo seu ID e o armazena na variável 'startBtn'."
+    },
+    {
+        "code": "const stopBtn = document.getElementById('stop');",
+        "explanation": "Obtém o elemento de botão de parar pelo seu ID e o armazena na variável 'stopBtn'."
+    },
+    {
+        "code": "const operationSelector = document.getElementById('operation');",
+        "explanation": "Obtém o elemento de seleção de operação pelo seu ID e o armazena na variável 'operationSelector'."
+    },
+    {
+        "code": "const questionEl = document.getElementById('question');",
+        "explanation": "Obtém o elemento de exibição da pergunta pelo seu ID e o armazena na variável 'questionEl'."
+    },
+    {
+        "code": "const answersEl = document.getElementById('answers');",
+        "explanation": "Obtém o elemento de exibição das respostas pelo seu ID e o armazena na variável 'answersEl'."
     }
 ]

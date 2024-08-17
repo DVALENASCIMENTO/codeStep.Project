@@ -9,206 +9,190 @@
     },
     {
         "code": "<head>",
-        "explanation": "Inicia a seção <head>, que contém metadados sobre o documento. Esta seção é onde você define informações importantes que não são exibidas diretamente na página, como o título, links para arquivos de estilo, scripts e configurações de viewport."
+        "explanation": "Inicia a seção de cabeçalho do documento HTML. O cabeçalho contém metadados sobre o documento, como o título, links para folhas de estilo e scripts, além de outros elementos que não são exibidos diretamente na página."
     },
     {
         "code": "<meta charset=\"UTF-8\">",
-        "explanation": "Define a codificação de caracteres do documento como UTF-8. Esta codificação é amplamente utilizada e suporta a maioria dos caracteres de diferentes idiomas, garantindo que os textos sejam exibidos corretamente e evitando problemas de caracteres estranhos ou ilegíveis."
+        "explanation": "Define a codificação de caracteres para UTF-8, que suporta uma ampla gama de caracteres e símbolos de diferentes idiomas. Isso é essencial para garantir que o texto da página seja exibido corretamente em diferentes idiomas."
+    },
+    {
+        "code": "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">",
+        "explanation": "Informa ao Internet Explorer para usar o modo de renderização mais recente, garantindo que a página seja exibida com a maior compatibilidade e recursos disponíveis."
     },
     {
         "code": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
-        "explanation": "Configura a viewport para que a página seja responsiva em dispositivos móveis. O atributo width=device-width ajusta a largura da página para a largura do dispositivo, enquanto initial-scale=1.0 define a escala inicial. Isso é essencial para garantir que a página seja exibida corretamente em diferentes tamanhos de tela."
+        "explanation": "Configura a viewport para garantir que a página seja responsiva e se ajuste corretamente em dispositivos móveis. Define a largura da viewport como a largura do dispositivo e a escala inicial como 1.0, sem zoom inicial."
     },
     {
-        "code": "<title>TaskTime Pro</title>",
-        "explanation": "Define o título da página que aparece na aba do navegador. O título é importante para a usabilidade e SEO, pois ajuda os usuários a identificarem rapidamente a página que estão visualizando, além de ser um fator que influencia o ranking nos motores de busca."
+        "code": "<link rel=\"stylesheet\" href=\"css/style.css\"/>",
+        "explanation": "Inclui uma folha de estilo externa (CSS) localizada no diretório 'css'. A folha de estilo define a aparência visual da página, como cores, fontes e layout."
     },
     {
-        "code": "<link rel=\"stylesheet\" href=\"css/styles.css\">",
-        "explanation": "Adiciona um link para um arquivo de estilos CSS localizado na pasta css. Isso permite que você estilize sua página HTML com regras de estilo, como cores, fontes e layout, separando a lógica de apresentação do conteúdo."
-    },
-    {
-        "code": "<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap\">",
-        "explanation": "Adiciona uma fonte externa do Google Fonts chamada 'Poppins'. Através deste link, você pode utilizar diferentes pesos da fonte (400 para regular e 700 para negrito) em sua página. Isso ajuda a personalizar o design e melhorar a estética do texto."
+        "code": "<title>Calculadora JavaScript</title>",
+        "explanation": "Define o título da página que aparece na aba do navegador. O título é importante para a identificação da página e para SEO."
     },
     {
         "code": "</head>",
-        "explanation": "Fecha a seção <head>. Após esta linha, o navegador começará a processar o conteúdo da seção <body>, onde o conteúdo visível da página é definido."
+        "explanation": "Fecha a seção de cabeçalho do documento HTML."
     },
     {
         "code": "<body>",
-        "explanation": "Inicia a seção <body>, que contém o conteúdo visível da página, como texto, imagens, vídeos e outros elementos que os usuários interagem diretamente. Todo o conteúdo visual e interativo deve estar dentro dessa seção."
+        "explanation": "Inicia a seção do corpo do documento HTML, que contém o conteúdo visível da página."
     },
     {
-        "code": "<header>",
-        "explanation": "Inicia a seção de cabeçalho da página. O cabeçalho geralmente contém elementos que aparecem no topo da página, como logotipo, título, navegação e outras informações importantes que são relevantes para a identidade do site."
+        "code": "<h1 class=\"animated-title\">CalcPro Plus</h1>",
+        "explanation": "Exibe um título principal (H1) na página com a classe 'animated-title'. A classe pode ser usada para aplicar estilos e animações ao título."
     },
     {
-        "code": "<h1>TaskTime Pro</h1>",
-        "explanation": "Adiciona um título principal (h1) com o nome do aplicativo. O <h1> é o título mais importante da página e deve ser utilizado apenas uma vez por página. Ele desempenha um papel crucial na hierarquia de conteúdo e na otimização para motores de busca (SEO)."
+        "code": "<div class=\"main\">",
+        "explanation": "Inicia um contêiner div com a classe 'main'. Esta div é usada para agrupar e estilizar o conteúdo principal da página."
     },
     {
-        "code": "</header>",
-        "explanation": "Fecha a seção de cabeçalho. Após essa linha, o conteúdo relacionado ao cabeçalho é encerrado e o navegador passará para o conteúdo principal da página."
+        "code": "<form action=\"\" name=\"Calculator\">",
+        "explanation": "Inicia um formulário HTML com um atributo 'name' definido como 'Calculator'. O atributo 'action' está vazio, o que significa que o formulário não enviará dados para nenhum lugar por padrão."
     },
     {
-        "code": "<main>",
-        "explanation": "Inicia a seção principal da página, onde o conteúdo principal é exibido. A tag <main> é semântica e indica que este é o conteúdo mais relevante da página, facilitando a navegação e acessibilidade."
+        "code": "<div class=\"input-container\">",
+        "explanation": "Inicia uma div com a classe 'input-container'. Esta div é usada para agrupar os elementos de entrada do formulário, como o campo de texto e os botões."
     },
     {
-        "code": "<div class=\"pomodoro-timer\">",
-        "explanation": "Cria uma <div> com a classe pomodoro-timer que conterá o temporizador Pomodoro. O uso de classes permite aplicar estilos CSS específicos e facilita a manipulação do elemento via JavaScript."
+        "code": "<input type=\"text\" class=\"text maincolor\" name=\"text1\" value=\"\" disabled>",
+        "explanation": "Cria um campo de texto (input) desabilitado, que serve como visor para a calculadora. A classe 'text maincolor' pode ser usada para estilizar o campo de texto."
     },
     {
-        "code": "<h2>Temporizador Pomodoro</h2>",
-        "explanation": "Adiciona um subtítulo (h2) para a seção do temporizador. O uso de <h2> indica uma hierarquia abaixo do <h1>, contribuindo para a estrutura e organização do conteúdo."
+        "code": "<input type=\"button\" class=\"clear-input-button\" name=\"text12\" value=\"C\" onclick=\"clearInput()\">",
+        "explanation": "Cria um botão com a classe 'clear-input-button' e o valor 'C'. Ao ser clicado, o botão chama a função 'clearInput()' para limpar o visor da calculadora."
     },
     {
-        "code": "<div class=\"timer-container\">",
-        "explanation": "Cria uma <div> para agrupar elementos do temporizador. Isso ajuda a organizar o layout e a lógica do temporizador, tornando o código mais claro e estruturado."
+        "code": "<input type=\"button\" class=\"num maincolor\" name=\"btn9\" value=\"9\" onclick=\"displaynum(btn9.value)\">",
+        "explanation": "Cria um botão numérico com o valor '9' e a classe 'num maincolor'. Quando clicado, o botão chama a função 'displaynum()' com o valor '9' para exibir o número no visor."
     },
     {
-        "code": "<div id=\"time-circle\" class=\"timer-circle\">",
-        "explanation": "Cria uma <div> com um ID time-circle e uma classe timer-circle para representar visualmente o temporizador. IDs são únicos e permitem que você estilize ou manipule esse elemento específico diretamente com CSS ou JavaScript."
+        "code": "<input type=\"button\" class=\"num maincolor\" name=\"btn8\" value=\"8\" onclick=\"displaynum(btn8.value)\">",
+        "explanation": "Cria um botão numérico com o valor '8' e a classe 'num maincolor'. Quando clicado, o botão chama a função 'displaynum()' com o valor '8' para exibir o número no visor."
     },
     {
-        "code": "<div class=\"timer-bar\"></div>",
-        "explanation": "Adiciona uma <div> com a classe timer-bar que pode ser usada para representar visualmente o tempo decorrido ou restante. Essa barra pode ser estilizada para mostrar o progresso do temporizador."
+        "code": "<input type=\"button\" class=\"num maincolor\" name=\"btn7\" value=\"7\" onclick=\"displaynum(btn7.value)\">",
+        "explanation": "Cria um botão numérico com o valor '7' e a classe 'num maincolor'. Quando clicado, o botão chama a função 'displaynum()' com o valor '7' para exibir o número no visor."
+    },
+    {
+        "code": "<input type=\"button\" class=\"num blue\" name=\"addbtn\" value=\"+\" onclick=\"displaynum(addbtn.value)\"><br>",
+        "explanation": "Cria um botão para a operação de adição com o valor '+' e a classe 'num blue'. Quando clicado, o botão chama a função 'displaynum()' com o valor '+'. O elemento '<br>' é usado para pular uma linha."
+    },
+    {
+        "code": "<input type=\"button\" class=\"num maincolor\" name=\"btn6\" value=\"6\" onclick=\"displaynum(btn6.value)\">",
+        "explanation": "Cria um botão numérico com o valor '6' e a classe 'num maincolor'. Quando clicado, o botão chama a função 'displaynum()' com o valor '6' para exibir o número no visor."
+    },
+    {
+        "code": "<input type=\"button\" class=\"num maincolor\" name=\"btn5\" value=\"5\" onclick=\"displaynum(btn5.value)\">",
+        "explanation": "Cria um botão numérico com o valor '5' e a classe 'num maincolor'. Quando clicado, o botão chama a função 'displaynum()' com o valor '5' para exibir o número no visor."
+    },
+    {
+        "code": "<input type=\"button\" class=\"num maincolor\" name=\"btn4\" value=\"4\" onclick=\"displaynum(btn4.value)\">",
+        "explanation": "Cria um botão numérico com o valor '4' e a classe 'num maincolor'. Quando clicado, o botão chama a função 'displaynum()' com o valor '4' para exibir o número no visor."
+    },
+    {
+        "code": "<input type=\"button\" class=\"num pin\" name=\"subbtn\" value=\"-\" onclick=\"displaynum(subbtn.value)\"><br>",
+        "explanation": "Cria um botão para a operação de subtração com o valor '-' e a classe 'num pin'. Quando clicado, o botão chama a função 'displaynum()' com o valor '-'. O elemento '<br>' é usado para pular uma linha."
+    },
+    {
+        "code": "<input type=\"button\" class=\"num maincolor\" name=\"btn3\" value=\"3\" onclick=\"displaynum(btn3.value)\">",
+        "explanation": "Cria um botão numérico com o valor '3' e a classe 'num maincolor'. Quando clicado, o botão chama a função 'displaynum()' com o valor '3' para exibir o número no visor."
+    },
+    {
+        "code": "<input type=\"button\" class=\"num maincolor\" name=\"btn2\" value=\"2\" onclick=\"displaynum(btn2.value)\">",
+        "explanation": "Cria um botão numérico com o valor '2' e a classe 'num maincolor'. Quando clicado, o botão chama a função 'displaynum()' com o valor '2' para exibir o número no visor."
+    },
+    {
+        "code": "<input type=\"button\" class=\"num maincolor\" name=\"btn1\" value=\"1\" onclick=\"displaynum(btn1.value)\">",
+        "explanation": "Cria um botão numérico com o valor '1' e a classe 'num maincolor'. Quando clicado, o botão chama a função 'displaynum()' com o valor '1' para exibir o número no visor."
+    },
+    {
+        "code": "<input type=\"button\" class=\"num gre\" name=\"mulbtn\" value=\"*\" onclick=\"displaynum(mulbtn.value)\"><br>",
+        "explanation": "Cria um botão para a operação de multiplicação com o valor '*' e a classe 'num gre'. Quando clicado, o botão chama a função 'displaynum()' com o valor '*'. O elemento '<br>' é usado para pular uma linha."
+    },
+    {
+        "code": "<input type=\"button\" class=\"num maincolor\" name=\"dot\" value=\".\" onclick=\"displaynum(dot.value)\">",
+        "explanation": "Cria um botão para o ponto decimal com o valor '.' e a classe 'num maincolor'. Quando clicado, o botão chama a função 'displaynum()' com o valor '.'."
+    },
+    {
+        "code": "<input type=\"button\" class=\"num maincolor\" name=\"btn0\" value=\"0\" onclick=\"displaynum(btn0.value)\">",
+        "explanation": "Cria um botão numérico com o valor '0' e a classe 'num maincolor'. Quando clicado, o botão chama a função 'displaynum()' com o valor '0' para exibir o número no visor."
+    },
+    {
+        "code": "<input type=\"button\" class=\"num maincolor\" name=\"comma\" value=\",\" onclick=\"insertComma()\">",
+        "explanation": "Cria um botão para a vírgula com o valor ',' e a classe 'num maincolor'. Quando clicado, o botão chama a função 'insertComma()' para inserir uma vírgula no visor."
+    },
+    {
+        "code": "<input type=\"button\" class=\"num ora\" name=\"divbtn\" value=\"/\" onclick=\"displaynum(divbtn.value)\"><br>",
+        "explanation": "Cria um botão para a operação de divisão com o valor '/' e a classe 'num ora'. Quando clicado, o botão chama a função 'displaynum()' com o valor '/'. O elemento '<br>' é usado para pular uma linha."
+    },
+    {
+        "code": "<input type=\"button\" class=\"num red del-button\" name=\"delbtn\" value=\"DEL\" onclick=\"deleteLastChar()\">",
+        "explanation": "Cria um botão para deletar o último caractere com o valor 'DEL' e as classes 'num red del-button'. Quando clicado, o botão chama a função 'deleteLastChar()' para remover o último caractere do visor."
+    },
+    {
+        "code": "<input type=\"button\" class=\"num maincolor\" name=\"percentage\" value=\"%\" onclick=\"calculatePercentage()\">",
+        "explanation": "Cria um botão para calcular a porcentagem com o valor '%' e a classe 'num maincolor'. Quando clicado, o botão chama a função 'calculatePercentage()' para calcular e exibir a porcentagem no visor."
+    },
+    {
+        "code": "<input type=\"button\" class=\"num pur\" name=\"eqlbtn\" value=\"=\" onclick=\"calculate()\">",
+        "explanation": "Cria um botão para calcular o resultado com o valor '=' e a classe 'num pur'. Quando clicado, o botão chama a função 'calculate()' para calcular e exibir o resultado no visor."
+    },
+    {
+        "code": "<div id=\"history\"></div>",
+        "explanation": "Cria uma div com o id 'history', que será usada para exibir o histórico de cálculos realizados na calculadora."
+    },
+    {
+        "code": "<button type=\"button\" class=\"clear-history-button\" onclick=\"clearHistory()\">Clear</button>",
+        "explanation": "Cria um botão com a classe 'clear-history-button' e o texto 'Clear'. Quando clicado, o botão chama a função 'clearHistory()' para limpar o histórico de cálculos exibido na div 'history'."
+    },
+    {
+        "code": "</form>",
+        "explanation": "Fecha o formulário HTML."
     },
     {
         "code": "</div>",
-        "explanation": "Fecha a <div> do círculo do temporizador. Isso encerra a seção visual que representa o temporizador em si."
-    },
-    {
-        "code": "<div class=\"timer-display\" id=\"timer\">25:00</div>",
-        "explanation": "Adiciona uma <div> com um ID timer para exibir o tempo atual do temporizador, inicialmente definido para 25 minutos. O conteúdo dentro dessa <div> será atualizado dinamicamente conforme o temporizador avança."
-    },
-    {
-        "code": "</div>",
-        "explanation": "Fecha a <div> do contêiner do temporizador, encerrando a seção de exibição do temporizador."
-    },
-    {
-        "code": "<div class=\"progress-bar-container\">",
-        "explanation": "Cria uma <div> para conter a barra de progresso. Essa estrutura permite que você gerencie o layout da barra de progresso em relação ao temporizador."
-    },
-    {
-        "code": "<div class=\"progress-bar\"></div>",
-        "explanation": "Adiciona uma <div> com a classe progress-bar para representar visualmente o progresso do temporizador. Essa barra pode ser estilizada para mudar de aparência conforme o tempo passa, dando feedback visual ao usuário."
-    },
-    {
-        "code": "</div>",
-        "explanation": "Fecha a <div> do contêiner da barra de progresso, encerrando a seção que representa o progresso do temporizador."
-    },
-    {
-        "code": "<div class=\"timer-buttons\">",
-        "explanation": "Cria uma <div> para os botões de controle do temporizador. Essa estrutura permite agrupar os botões que permitem ao usuário interagir com o temporizador."
-    },
-    {
-        "code": "<button id=\"start-btn\">Iniciar</button>",
-        "explanation": "Adiciona um botão com o ID start-btn para iniciar o temporizador. Esse botão será clicado pelo usuário para começar a contagem do tempo."
-    },
-    {
-        "code": "<button id=\"pause-btn\">Pausar</button>",
-        "explanation": "Adiciona um botão com o ID pause-btn para pausar o temporizador. Esse botão permitirá que o usuário interrompa temporariamente a contagem."
-    },
-    {
-        "code": "<button id=\"reset-btn\">Resetar</button>",
-        "explanation": "Adiciona um botão com o ID reset-btn para redefinir o temporizador. Esse botão reiniciará o temporizador, permitindo que o usuário comece novamente."
-    },
-    {
-        "code": "</div>",
-        "explanation": "Fecha a <div> dos botões do temporizador, encerrando a seção que contém os controles."
-    },
-    {
-        "code": "</div>",
-        "explanation": "Fecha a <div> do temporizador Pomodoro, encerrando a seção principal do temporizador."
-    },
-    {
-        "code": "<div class=\"task-list\">",
-        "explanation": "Cria uma <div> com a classe task-list para a lista de tarefas. Isso permite organizar as tarefas que o usuário deseja realizar durante o Pomodoro."
-    },
-    {
-        "code": "<h2>Lista de Tarefas</h2>",
-        "explanation": "Adiciona um subtítulo (h2) para a seção da lista de tarefas. Isso ajuda a identificar a seção onde o usuário pode ver e gerenciar suas tarefas."
-    },
-    {
-        "code": "<ul id=\"task-list\">",
-        "explanation": "Inicia uma lista não ordenada (<ul>) com o ID task-list para exibir as tarefas. Essa lista permitirá que os usuários vejam suas tarefas em formato de lista."
-    },
-    {
-        "code": "<!-- Aqui serão inseridas as tarefas dinamicamente via JavaScript -->",
-        "explanation": "Comentário que indica que as tarefas serão adicionadas dinamicamente usando JavaScript. Isso é útil para desenvolvedores entenderem que o conteúdo da lista será modificado através de scripts."
-    },
-    {
-        "code": "</ul>",
-        "explanation": "Fecha a lista de tarefas, encerrando a seção que exibe as tarefas que o usuário deseja realizar."
-    },
-    {
-        "code": "<input type=\"text\" id=\"task-input\" placeholder=\"Adicionar nova tarefa\">",
-        "explanation": "Adiciona um campo de entrada de texto com o ID task-input onde os usuários podem inserir novas tarefas. O atributo placeholder fornece um texto explicativo que desaparece quando o usuário começa a digitar."
-    },
-    {
-        "code": "<button id=\"add-task-btn\">Adicionar Tarefa</button>",
-        "explanation": "Adiciona um botão com o ID add-task-btn para adicionar a nova tarefa à lista. Quando clicado, este botão acionará a lógica para incluir a tarefa que o usuário digitou."
-    },
-    {
-        "code": "</div>",
-        "explanation": "Fecha a <div> da lista de tarefas, encerrando a seção que contém o campo de entrada e o botão para adicionar tarefas."
-    },
-    {
-        "code": "</main>",
-        "explanation": "Fecha a seção principal da página, indicando que todo o conteúdo relevante foi incluído nessa seção."
-    },
-    {
-        "code": "<section class=\"contacts\">",
-        "explanation": "Inicia uma seção de contatos. Esta seção pode incluir informações sobre como entrar em contato ou links para perfis sociais."
-    },
-    {
-        "code": "<ul class=\"contacts-list\">",
-        "explanation": "Inicia uma lista não ordenada (<ul>) com a classe contacts-list para os links de contato. Essa estrutura permite apresentar informações de contato de forma organizada."
-    },
-    {
-        "code": "<li><a href=\"http://www.linkedin.com/in/diego-vale-do-nascimento-48212215b/\" target=\"_blank\">LinkedIn</a></li>",
-        "explanation": "Adiciona um item de lista (<li>) com um link para o perfil do LinkedIn. O atributo target=\"_blank\" faz com que o link seja aberto em uma nova aba, permitindo que os usuários mantenham a página original aberta."
-    },
-    {
-        "code": "<li><a href=\"https://github.com/DVALENASCIMENTO\" target=\"_blank\">GitHub</a></li>",
-        "explanation": "Adiciona outro item de lista com um link para o perfil do GitHub. Este também será aberto em uma nova aba, proporcionando fácil acesso às informações do autor sem perder o contexto da página atual."
-    },
-    {
-        "code": "</ul>",
-        "explanation": "Fecha a lista de contatos, encerrando a seção que apresenta os links para redes sociais ou informações de contato."
-    },
-    {
-        "code": "</section>",
-        "explanation": "Fecha a seção de contatos, indicando que todos os elementos relacionados a contatos foram incluídos."
+        "explanation": "Fecha a div com a classe 'main'."
     },
     {
         "code": "<footer>",
-        "explanation": "Inicia a seção do rodapé. O rodapé geralmente contém informações de direitos autorais, créditos, e links adicionais que não estão no cabeçalho ou no corpo principal."
+        "explanation": "Inicia a seção de rodapé do documento HTML. O rodapé geralmente contém informações de contato e créditos."
     },
     {
-        "code": "<p>Diego Nascimento</p>",
-        "explanation": "Adiciona um parágrafo (<p>) com o nome do autor. Isso é importante para dar crédito ao criador do conteúdo."
+        "code": "<p>Diego Vale do Nascimento - Analista e Desenvolvedor de Sistemas</p>",
+        "explanation": "Exibe um parágrafo com o nome e o título profissional de Diego Vale do Nascimento."
     },
     {
-        "code": "<p>Tecnólogo em Análise e Desenvolvimento de Sistemas</p>",
-        "explanation": "Adiciona outro parágrafo com a descrição profissional do autor. Isso fornece contexto sobre as qualificações do autor, ajudando os usuários a entenderem sua experiência."
+        "code": "<p>",
+        "explanation": "Inicia um parágrafo que contém links para perfis de redes sociais."
+    },
+    {
+        "code": "<a href=\"https://www.linkedin.com/in/diego-vale-do-nascimento-48212215b/\" target=\"_blank\">LinkedIn</a> |",
+        "explanation": "Cria um link para o perfil do LinkedIn de Diego Vale do Nascimento. O atributo 'target=\"_blank\"' faz com que o link seja aberto em uma nova aba."
+    },
+    {
+        "code": "<a href=\"https://github.com/DVALENASCIMENTO\" target=\"_blank\">GitHub</a>",
+        "explanation": "Cria um link para o perfil do GitHub de Diego Vale do Nascimento. O atributo 'target=\"_blank\"' faz com que o link seja aberto em uma nova aba."
+    },
+    {
+        "code": "</p>",
+        "explanation": "Fecha o parágrafo que contém os links para perfis de redes sociais."
     },
     {
         "code": "</footer>",
-        "explanation": "Fecha a seção do rodapé, encerrando a parte final do documento que pode conter informações adicionais."
-    },
-    {
-        "code": "<script src=\"js/script.js\"></script>",
-        "explanation": "Adiciona um link para um arquivo JavaScript externo localizado na pasta js. Este script contém a lógica e funcionalidade da página, permitindo interatividade e manipulação do DOM."
+        "explanation": "Fecha a seção de rodapé do documento HTML."
     },
     {
         "code": "</body>",
-        "explanation": "Fecha a seção <body>. Após essa linha, nenhum conteúdo visível da página será processado."
+        "explanation": "Fecha a seção do corpo do documento HTML."
+    },
+    {
+        "code": "<script src=\"script.js/script.js\"></script>",
+        "explanation": "Inclui um arquivo JavaScript externo localizado no diretório 'script.js'. Este script contém o código JavaScript que adiciona funcionalidade à calculadora, como operações e manipulação do visor."
     },
     {
         "code": "</html>",
-        "explanation": "Fecha o documento HTML, indicando que todas as seções e conteúdos foram encerrados corretamente."
+        "explanation": "Fecha o documento HTML."
     }
 ]
