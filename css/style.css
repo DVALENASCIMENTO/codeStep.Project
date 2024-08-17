@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Fundo escuro */
+    color: #e0e0e0; /* Texto claro */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Usar flexbox para centralização */
+    flex-direction: column; /* Alinhar elementos em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    height: 100vh; /* Altura total da tela */
+}
+
+.container {
+    text-align: center; /* Centraliza o texto */
+}
+
+h1 {
+    font-size: 36px; /* Tamanho da fonte */
+    background: linear-gradient(90deg, #6200ea, #3700b3); /* Gradiente */
+    -webkit-background-clip: text; /* Clipping para o gradiente no texto */
+    -webkit-text-fill-color: transparent; /* Preenchimento do texto transparente */
+    animation: blink 1s infinite; /* Animação de piscar */
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1; /* Totalmente visível */
+    }
+    50% {
+        opacity: 0; /* Totalmente invisível */
+    }
+}
+
+p {
+    text-align: center; /* Centraliza o texto do parágrafo */
+    margin: 10px 0; /* Margem em cima e embaixo do parágrafo */
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #6200ea; /* Cor do botão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px; /* Margem entre os botões */
+}
+
+button:hover {
+    background-color: #3700b3; /* Cor do botão ao passar o mouse */
+}
+
+#code-display, #explanation-display {
+    background-color: #2e2e2e; /* Fundo do código e explicação */
+    border-radius: 5px;
+    padding: 15px;
+    margin: 20px auto;
+    white-space: pre-wrap; /* Manter formatação do código */
+    text-align: left;
+    overflow-x: auto; /* Permitir rolagem horizontal */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: #61dafb; /* Cor dos links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Sublinha ao passar o mouse */
+}
+
+/* Estilo para o botão Voltar ao Topo */
+#scroll-top {
+    position: fixed; /* Fixa o botão na tela */
+    bottom: 20px; /* Distância da parte inferior da tela */
+    right: 20px; /* Distância do lado direito da tela */
+    padding: 10px 15px;
+    background-color: #6200ea; /* Cor de fundo */
+    color: white; /* Cor do ícone */
+    border: none; /* Remove a borda */
+    border-radius: 50%; /* Torna o botão redondo */
+    cursor: pointer; /* Aparece a mãozinha no hover */
+    font-size: 24px; /* Tamanho do ícone */
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+#scroll-top:hover {
+    background-color: #3700b3; /* Cor ao passar o mouse */
+}
